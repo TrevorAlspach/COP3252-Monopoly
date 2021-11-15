@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="756.0" prefWidth="756.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.HelloController">
+<VBox alignment="CENTER" prefHeight="756.0" prefWidth="756.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
    <Canvas height="598.0" width="755.0" />
    <TabPane prefHeight="148.0" prefWidth="583.0" tabClosingPolicy="UNAVAILABLE">
      <tabs>
