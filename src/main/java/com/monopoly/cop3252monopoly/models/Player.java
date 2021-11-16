@@ -11,36 +11,48 @@ public class Player {
     private String playerName;
     private int currentPosition;
     private int playerID;
+    private int getOutOfJailCards;
 
     public Player(int newID) {
-        // default constructor
+        // constructor
         currentBalance = 1500;  // Starting balance
         playerName = "";
         playerID = newID;
+        getOutOfJailCards = 0;
     }
 
-    // method to draw card and apply logic
+    // draw Chance card
     public ChanceCard drawCard(ChanceCardsDeck chanceCardsDeck) {
         return chanceCardsDeck.getCard();
     }
 
+    // draw Community Chest card
     public CommunityCard drawCard(CommunityCardsDeck communityCardsDeck) {
         return communityCardsDeck.getCard();
     }
 
     // ID
-    public int getPlayerID() { return playerID; }
+    public int getPlayerID() { return playerID; } // getter
 
     // Name
-    public String getPlayerName() { return playerName; }
-    public void setPlayerName(String name) { playerName = name; }
+    public String getPlayerName() { return playerName; } // getter
+    public void setPlayerName(String name) { playerName = name; } // setter
 
     // Balance
-    public int getCurrentBalance() { return currentBalance; }
-    public void setCurrentBalance(int money) { currentBalance = money; }
+    public int getCurrentBalance() { return currentBalance; } // getter
+    public void setCurrentBalance(int money) { currentBalance = money; } // setter
+    public void loseMoney(int money) { currentBalance -= money; } // player loses money
+    public void addMoney(int money) { currentBalance += money; } // player earns money
 
     // Position
-    public int getCurrentPosition() { return currentPosition; }
-    public void setCurrentPosition(int position) { currentPosition = position; }
+    public int getCurrentPosition() { return currentPosition; } // getter
+    public void setCurrentPosition(int position) { currentPosition = position; } // setter
+    public void movePlayer(int num) { currentPosition += num; } // can be used to move player forward or backward
+
+    // Get Out of Jail Cards
+    public int getNumGetOutOfJailCards() { return getOutOfJailCards; } // getter
+    public void addGetOutOfJailCard() { getOutOfJailCards++; } // player received get-out-of-jail card
+    public void useGetOutOfJailCard() { getOutOfJailCards--; } // player uses get-out-of-jail card
+
 
 }

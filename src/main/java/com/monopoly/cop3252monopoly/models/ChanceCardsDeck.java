@@ -33,7 +33,7 @@ public class ChanceCardsDeck {
             else if (x == 4) { chanceCard.setTitle("Advance to St. Charles Place. If you pass Go, collect $200");}
             else if (x == 5) { chanceCard.setTitle("Advance to the nearest Railroad. If unowned, you may buy it from the Bank. If owned, pay owner twice the rental to which they are otherwise entitled");}
             else if (x == 6) { chanceCard.setTitle("Advance to the nearest Railroad. If unowned, you may buy it from the Bank. If owned, pay owner twice the rental to which they are otherwise entitled");}
-            else if (x == 7) { chanceCard.setTitle("Advance token to nearest Utility. If unowned, you may buy it from the Bank. If owned, throw dice and pay owner a total ten times amount thrown");}
+            else if (x == 7) { chanceCard.setTitle("Advance token to the nearest Utility. If unowned, you may buy it from the Bank. If owned, throw dice and pay owner a total ten times amount thrown");}
             else if (x == 8) { chanceCard.setTitle("Bank pays you dividend of $50");}
             else if (x == 9) { chanceCard.setTitle("Get Out of Jail Free");}
             else if (x == 10) { chanceCard.setTitle("Go Back 3 Spaces");}
