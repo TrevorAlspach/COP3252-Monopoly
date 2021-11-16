@@ -1,4 +1,6 @@
-package com.monopoly.cop3252monopoly;
+package com.monopoly.cop3252monopoly.models;
+
+import com.monopoly.cop3252monopoly.models.ChanceCard;
 
 import java.util.ArrayList;
 import java.util.Random;

@@ -6,17 +6,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class MainWindowController {
-    @FXML
-    private Label welcomeText;
+    private int playerCount;
 
+    public MainWindowController(){}
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-
-    @FXML
-    public void myButton(ActionEvent actionEvent) {
-        welcomeText.setText("TREVOR CREATED THIS BUTTON");
+    public void setPlayerCount(int playerCount) {
+        this.playerCount = playerCount;
     }
 }

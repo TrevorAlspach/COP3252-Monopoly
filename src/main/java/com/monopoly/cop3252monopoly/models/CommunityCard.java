@@ -1,4 +1,4 @@
-package com.monopoly.cop3252monopoly;
+package com.monopoly.cop3252monopoly.models;
 
 public class CommunityCard {
     private String title;

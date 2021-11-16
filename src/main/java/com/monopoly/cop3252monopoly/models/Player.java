@@ -1,6 +1,9 @@
-package com.monopoly.cop3252monopoly;
+package com.monopoly.cop3252monopoly.models;
 
-import java.util.ArrayList;
+import com.monopoly.cop3252monopoly.models.ChanceCard;
+import com.monopoly.cop3252monopoly.models.ChanceCardsDeck;
+import com.monopoly.cop3252monopoly.models.CommunityCard;
+import com.monopoly.cop3252monopoly.models.CommunityCardsDeck;
 
 public class Player {
 
