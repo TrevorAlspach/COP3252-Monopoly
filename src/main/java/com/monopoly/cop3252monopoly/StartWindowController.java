@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,49 +23,26 @@ public class StartWindowController {
 
     @FXML
     protected void onButton2Click(ActionEvent event) {
-        title.setText("Button 2 Clicked");
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("main-window.fxml"));
-            MainWindowController controller = fxmlLoader.getController();
-            controller.setPlayerCount(2);
-            Scene scene = new Scene(fxmlLoader.load(), 720, 720);
-            Stage stage = new Stage();
-            stage.setTitle("Monopoly");
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        startGame(2);
     }
     @FXML
     protected void onButton3Click(ActionEvent event) {
-        title.setText("Button 3 Clicked");
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("main-window.fxml"));
-            //MainWindowController controller = fxmlLoader.getController();
-            //controller.setPlayerCount(3);
-            Scene scene = new Scene(fxmlLoader.load(), 720, 720);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        startGame(3);
     }
     @FXML
     protected void onButton4Click(ActionEvent event) {
-        title.setText("Button 4 Clicked");
+        startGame(4);
+    }
+
+    private void startGame(int playerCount) {
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("main-window.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main-window.fxml"));
+            Parent parent = fxmlLoader.load();
             MainWindowController controller = fxmlLoader.getController();
-            controller.setPlayerCount(4);
-            Scene scene = new Scene(fxmlLoader.load(), 720, 720);
+            controller.setPlayerCount(playerCount);
+            Scene scene = new Scene(parent, 720, 720);
             Stage stage = new Stage();
+            stage.setTitle("Monopoly");
             stage.setScene(scene);
             stage.show();
         }

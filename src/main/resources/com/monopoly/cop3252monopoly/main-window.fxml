@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.canvas.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox alignment="CENTER" prefHeight="756.0" prefWidth="756.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
-   <Canvas height="598.0" width="755.0" />
-   <TabPane prefHeight="148.0" prefWidth="583.0" tabClosingPolicy="UNAVAILABLE">
+   <StackPane fx:id="stackPane" prefHeight="540.0" prefWidth="756.0">
+      <children>
+         <ImageView fx:id="ivBoard" fitHeight="539.0" fitWidth="755.0" pickOnBounds="true" preserveRatio="true" />
+      </children>
+   </StackPane>
+
+   <TabPane prefHeight="205.0" prefWidth="756.0" tabClosingPolicy="UNAVAILABLE">
      <tabs>
        <Tab text="Hello">
          <content>
