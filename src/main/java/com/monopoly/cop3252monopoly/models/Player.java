@@ -14,17 +14,17 @@ public class Player {
 
     public Player(int newID) {
         // default constructor
-        currentBalance = 1500;
+        currentBalance = 1500;  // Starting balance
         playerName = "";
         playerID = newID;
     }
 
     // method to draw card and apply logic
-    public ChanceCard drawChanceCard(ChanceCardsDeck chanceCardsDeck) {
+    public ChanceCard drawCard(ChanceCardsDeck chanceCardsDeck) {
         return chanceCardsDeck.getCard();
     }
 
-    public CommunityCard drawCommunityCard(CommunityCardsDeck communityCardsDeck) {
+    public CommunityCard drawCard(CommunityCardsDeck communityCardsDeck) {
         return communityCardsDeck.getCard();
     }
 

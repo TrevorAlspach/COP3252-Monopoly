@@ -1,5 +1,8 @@
 package com.monopoly.cop3252monopoly;
 
+import com.monopoly.cop3252monopoly.models.ChanceCard;
+import com.monopoly.cop3252monopoly.models.ChanceCardsDeck;
+import com.monopoly.cop3252monopoly.models.CommunityCardsDeck;
 import com.monopoly.cop3252monopoly.models.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +25,12 @@ public class MonopolyApplication extends Application {
 
     public static void main(String[] args) {
         launch();
+
+        // Example code if inside console
+        /*
         Scanner input = new Scanner(System.in);
+        CommunityCardsDeck communityCardsDeck = new CommunityCardsDeck();
+        ChanceCardsDeck chanceCardsDeck = new ChanceCardsDeck();
         int numPlayers;
         ArrayList<Player> playerList = new ArrayList<>();
 
@@ -34,6 +42,9 @@ public class MonopolyApplication extends Application {
             playerList.add(player);
         }
 
+        ChanceCard drawnCard = playerList.get(0).drawCard(chanceCardsDeck);
+        System.out.println(drawnCard.getCardType() + " Card: " + drawnCard.getTitle());
+        */
 
 
     }
