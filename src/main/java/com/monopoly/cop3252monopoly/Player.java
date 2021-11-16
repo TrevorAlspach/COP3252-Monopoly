@@ -16,6 +16,15 @@ public class Player {
         playerID = newID;
     }
 
+    // method to draw card and apply logic
+    public ChanceCard drawChanceCard(ChanceCardsDeck chanceCardsDeck) {
+        return chanceCardsDeck.getCard();
+    }
+
+    public CommunityCard drawCommunityCard(CommunityCardsDeck communityCardsDeck) {
+        return communityCardsDeck.getCard();
+    }
+
     // ID
     public int getPlayerID() { return playerID; }
 

@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MonopolyApplication extends Application {
     @Override
@@ -19,5 +21,19 @@ public class MonopolyApplication extends Application {
 
     public static void main(String[] args) {
         launch();
+        Scanner input = new Scanner(System.in);
+        int numPlayers;
+        ArrayList<Player> playerList = new ArrayList<>();
+
+        System.out.print("Enter number of players: ");
+        numPlayers = input.nextInt();
+
+        for (int i = 1; i <= numPlayers; i++) {
+            Player player = new Player(i);
+            playerList.add(player);
+        }
+
+
+
     }
 }
