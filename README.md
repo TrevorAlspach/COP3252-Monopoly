@@ -12,3 +12,5 @@ standard known instructions
 
 ○ A description of the separation of work between partners (who was responsible for what
 pieces of the program)
+
+[Monopoly Board Reference](https://www.amazon.com/Hasbro-00009-482-Monopoly-Board/dp/B00CV5PN2W)
