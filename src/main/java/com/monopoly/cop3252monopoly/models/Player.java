@@ -47,7 +47,13 @@ public class Player {
     // Position
     public int getCurrentPosition() { return currentPosition; } // getter
     public void setCurrentPosition(int position) { currentPosition = position; } // setter
-    public void movePlayer(int num) { currentPosition += num; } // can be used to move player forward or backward
+    public void movePlayer(int num) { // can be used to move player forward or backward
+        currentPosition += num;
+        if (currentPosition > 39) // user is going past boardwalk, and back at the start
+        {
+            currentPosition -= 40;
+        }
+    }
 
     // Get Out of Jail Cards
     public int getNumGetOutOfJailCards() { return getOutOfJailCards; } // getter
