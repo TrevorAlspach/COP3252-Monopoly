@@ -1,5 +1,6 @@
 package com.monopoly.cop3252monopoly;
 
+import com.monopoly.cop3252monopoly.models.Dice;
 import com.monopoly.cop3252monopoly.models.Player;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -17,17 +18,18 @@ import java.util.*;
 
 public class MainWindowController implements Initializable {
     public static Map<Integer, ArrayList<Integer>> xyValues = new HashMap<>(){{
-        put(0, new ArrayList<>(Arrays.asList(845, 715)));
-        put(1, new ArrayList<>(Arrays.asList(785, 715)));
-        put(2, new ArrayList<>(Arrays.asList(720, 715)));
-        put(3, new ArrayList<>(Arrays.asList(655, 715)));
-        put(4, new ArrayList<>(Arrays.asList(590, 715)));
-        put(5, new ArrayList<>(Arrays.asList(525, 715)));
-        put(6, new ArrayList<>(Arrays.asList(460, 715)));
-        put(7, new ArrayList<>(Arrays.asList(395, 715)));
-        put(8, new ArrayList<>(Arrays.asList(330, 715)));
-        put(9, new ArrayList<>(Arrays.asList(265, 715)));
-        put(10, new ArrayList<>(Arrays.asList(140, 715)));
+        put(0, new ArrayList<>(Arrays.asList(720, 695)));
+        //put(0, new int[]{845, 715});
+        put(1, new ArrayList<>(Arrays.asList(670, 695)));
+        put(2, new ArrayList<>(Arrays.asList(610, 695)));
+        put(3, new ArrayList<>(Arrays.asList(655, 695)));
+        put(4, new ArrayList<>(Arrays.asList(590, 695)));
+        put(5, new ArrayList<>(Arrays.asList(525, 695)));
+        put(6, new ArrayList<>(Arrays.asList(460, 695)));
+        put(7, new ArrayList<>(Arrays.asList(395, 695)));
+        put(8, new ArrayList<>(Arrays.asList(330, 695)));
+        put(9, new ArrayList<>(Arrays.asList(265, 695)));
+        put(10, new ArrayList<>(Arrays.asList(140, 695)));
         put(11, new ArrayList<>(Arrays.asList(140, 650)));
         put(12, new ArrayList<>(Arrays.asList(140, 585)));
         put(13, new ArrayList<>(Arrays.asList(140, 520)));
@@ -59,8 +61,8 @@ public class MainWindowController implements Initializable {
         put(39, new ArrayList<>(Arrays.asList(855, 650)));
         //Need to add Railroads and Utilities
     }};
-    private int playerCount;
 
+    //FXML Elements-----------------------------------------------------------------------------------------------------
     @FXML
     private ImageView ivBoard;
     @FXML
@@ -73,8 +75,11 @@ public class MainWindowController implements Initializable {
     private ImageView piece4;
     @FXML
     private Label playerLabel;
-
+    //End FXML Elements-------------------------------------------------------------------------------------------------
+    //Start Monopoly Objects--------------------------------------------------------------------------------------------
+    private int playerCount;
     private Player currentPlayer;
+    private Dice dice;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -88,10 +93,13 @@ public class MainWindowController implements Initializable {
             players.add(new Player(i));
         }
         currentPlayer = players.get(0);
+
+        dice = new Dice();
     }
 
     public void rollDice(ActionEvent event)
     {
+        //dice.DiceRollTurn(currentPlayer);
         currentPlayer.movePlayer(1);
         if (currentPlayer.getPlayerID() == 1){
             piece1.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
@@ -106,20 +114,21 @@ public class MainWindowController implements Initializable {
 
     private void initializePieces()
     {
-        piece1.setX(875);
-        piece1.setY(715);
-        piece2.setX(875);
-        piece2.setY(735);
+        piece1.setX(720);
+        piece1.setY(695);
+        piece2.setX(720);
+        piece2.setY(710);
         if (playerCount == 3 || playerCount == 4){
-            piece3.setX(875);
-            piece3.setY(755);
+            piece3.setX(720);
+            piece3.setY(725);
         }
         if (playerCount == 4){
-            piece4.setX(875);
-            piece4.setY(775);
+            piece4.setX(720);
+            piece4.setY(740);
         }
         if (playerCount == 2){
-            //make first two dissapear
+            piece3.setVisible(false);
+            piece4.setVisible(false);
         }
     }
 

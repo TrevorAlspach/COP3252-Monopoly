@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -12,9 +13,24 @@
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<VBox alignment="CENTER" prefHeight="1080" prefWidth="1080" spacing="10.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
-    <StackPane>
-        <ImageView fx:id="ivBoard" fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+<VBox alignment="CENTER" prefHeight="939.0" prefWidth="1440" spacing="10.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
+    <HBox maxHeight="774.0" minHeight="631.0" prefHeight="774.0" prefWidth="1440.0">
+        <VBox alignment="TOP_CENTER" maxHeight="720.0" prefHeight="720.0" prefWidth="224.0" spacing="30.0" style="-fx-background-color: white;">
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="210.0" text="ACTIONS">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         <Line endX="100.0" startX="-100.0" />
+            <Button alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="159.0" text="Roll Dice" onAction="#rollDice"/>
+         <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="163.0" text="View Properties" />
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+        </VBox>
+      <Line endX="100.0" layoutX="1071.0" layoutY="11.0" startX="100.0" startY="784.707275390625" />
+        <StackPane prefHeight="717.0" prefWidth="954.0" style="-fx-background-color: White;">
+        <ImageView fx:id="ivBoard" fitHeight="770.0" fitWidth="770.0" pickOnBounds="true" preserveRatio="true">
             <Image url="/com/monopoly/cop3252monopoly/images/monopoly_board_colorfixed.png"/>
         </ImageView>
         <Pane fx:id="Pane" prefHeight="540.0" prefWidth="756.0">
@@ -31,18 +47,158 @@
                 <Image url="/com/monopoly/cop3252monopoly/images/monopoly_dog.png"/>
             </ImageView>
         </Pane>
-    </StackPane>
+        </StackPane>
+      <Line endX="107.99984741210938" endY="-1.9142136573791504" startX="107.99984741210938" startY="781.378662109375" />
+        <VBox prefHeight="636.0" prefWidth="270.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="272.0" style="-fx-background-color: LightBlue;" text="Player 1">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font></Label>
+         <Line endX="160.0" startX="-102.0" />
+         <HBox prefHeight="55.0" prefWidth="252.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="131.0" text="Money">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="61.0" prefHeight="55.0" prefWidth="252.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="131.0" text="Properties">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="0">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="275.0" style="-fx-background-color: Red;" text="Player 2">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+         <Line endX="160.0" layoutX="113.0" layoutY="64.0" startX="-102.0" />
+         <HBox layoutX="10.0" layoutY="64.0" prefHeight="55.0" prefWidth="252.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="131.0" text="Money">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="119.0" prefHeight="55.0" prefWidth="252.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="131.0" text="Properties">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="0">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="275.0" style="-fx-background-color: Green;" text="Player 3">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+         <Line endX="160.0" layoutX="113.0" layoutY="228.0" startX="-102.0" />
+         <HBox layoutX="10.0" layoutY="64.0" prefHeight="55.0" prefWidth="252.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="131.0" text="Money">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="119.0" prefHeight="55.0" prefWidth="252.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="131.0" text="Properties">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="0">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="174.0" prefHeight="53.0" prefWidth="274.0" style="-fx-background-color: Yellow;" text="Player 4">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+         <Line endX="160.0" layoutX="113.0" layoutY="228.0" startX="-102.0" />
+         <HBox layoutX="10.0" layoutY="64.0" prefHeight="55.0" prefWidth="252.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="131.0" text="Money">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <HBox layoutX="10.0" layoutY="119.0" prefHeight="55.0" prefWidth="252.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="131.0" text="Properties">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="0">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+        </VBox>
+      <VBox.margin>
+         <Insets top="-50.0" />
+      </VBox.margin>
+    </HBox>
+    <Line endX="1077.69287109375" endY="9.930134183377959E-6" startX="-359.9949951171875" startY="-1.3494491577148438E-4" />
 
-    <Line endX="1077.69287109375" endY="9.930134183377959E-6" />
-
-   <Pane prefHeight="186.0" prefWidth="1080.0">
-       <HBox />
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" prefHeight="40.0" prefWidth="125.0" text="Player 1 Turn" fx:id="playerLabel">
+   <Pane prefHeight="94.0" prefWidth="1440.0">
+       <HBox prefHeight="300.0" />
+        <Label fx:id="playerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="14.0" prefHeight="94.0" prefWidth="178.0" text="Player 1 Turn">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="53.0" layoutY="70.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="125.0" text="Roll Dice" onAction="#rollDice"/>
-      <ListView layoutX="225.0" layoutY="-6.0" prefHeight="200.0" prefWidth="851.0" />
+      <ListView layoutX="278.0" layoutY="-2.0" prefHeight="125.0" prefWidth="851.0" />
    </Pane>
 </VBox>
