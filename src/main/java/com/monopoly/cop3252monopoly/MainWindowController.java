@@ -29,7 +29,7 @@ public class MainWindowController implements Initializable {
         put(7, new ArrayList<>(Arrays.asList(310, 695)));
         put(8, new ArrayList<>(Arrays.asList(250, 695)));
         put(9, new ArrayList<>(Arrays.asList(190, 695)));
-        put(10, new ArrayList<>(Arrays.asList(100, 695)));
+        put(10, new ArrayList<>(Arrays.asList(50, 695)));
         put(11, new ArrayList<>(Arrays.asList(100, 633)));
         put(12, new ArrayList<>(Arrays.asList(100, 571)));
         put(13, new ArrayList<>(Arrays.asList(100, 509)));
@@ -59,6 +59,7 @@ public class MainWindowController implements Initializable {
         put(37, new ArrayList<>(Arrays.asList(750, 509)));
         put(38, new ArrayList<>(Arrays.asList(750, 571)));
         put(39, new ArrayList<>(Arrays.asList(750, 633)));
+        put(40, new ArrayList<>(Arrays.asList(100, 695)));                  // THIS IS JAIL
         //Need to add Railroads and Utilities
     }};
 
