@@ -14,3 +14,5 @@ standard known instructions
 pieces of the program)
 
 [Monopoly Board Reference](https://www.amazon.com/Hasbro-00009-482-Monopoly-Board/dp/B00CV5PN2W)
+[Board Reference Image](SampleMonopolyBoard.jpg)
+[Chance and Community Chest Cards References](https://www.monopolyland.com/list-monopoly-chance-community-chest-cards/)
