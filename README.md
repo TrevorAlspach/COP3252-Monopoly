@@ -1,6 +1,5 @@
-# COP3252-Monopoly
-## Monopoly Game Project for COP3252
-### By: Trever Alspach, Kaitlin Tran, Benjamin Zech
+# Monopoly Game Project for COP3252
+## By: Trever Alspach, Kaitlin Tran, and Benjamin Zech
 
 ○ Any details regarding instructions for the game that are not obvious from the set of
 standard known instructions
