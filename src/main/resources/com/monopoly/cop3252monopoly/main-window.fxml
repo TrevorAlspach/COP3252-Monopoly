@@ -7,7 +7,9 @@
 <VBox alignment="CENTER" prefHeight="756.0" prefWidth="756.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
    <StackPane fx:id="stackPane" prefHeight="540.0" prefWidth="756.0">
       <children>
-         <ImageView fx:id="ivBoard" fitHeight="539.0" fitWidth="755.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fx:id="ivBoard" fitHeight="539.0" fitWidth="755.0" pickOnBounds="true" preserveRatio="true">
+             <Image url = "/com/monopoly/cop3252monopoly/images/monopoly_board.png"/>
+         </ImageView>
       </children>
    </StackPane>
 
