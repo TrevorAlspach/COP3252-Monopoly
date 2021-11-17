@@ -1,30 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="756.0" prefWidth="756.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
-   <StackPane fx:id="stackPane" prefHeight="540.0" prefWidth="756.0">
-      <children>
-         <ImageView fx:id="ivBoard" fitHeight="539.0" fitWidth="755.0" pickOnBounds="true" preserveRatio="true">
-             <Image url = "/com/monopoly/cop3252monopoly/images/monopoly_board.png"/>
-         </ImageView>
-      </children>
-   </StackPane>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox alignment="CENTER" prefHeight="1080" prefWidth="1080" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
+    <StackPane>
+        <ImageView fx:id="ivBoard" fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="/com/monopoly/cop3252monopoly/images/monopoly_board_colorfixed.png"/>
+        </ImageView>
+        <Pane fx:id="Pane" prefHeight="540.0" prefWidth="756.0">
+            <ImageView fx:id="piece1" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_car.png"/>
+            </ImageView>
+            <ImageView fx:id="piece2" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hat.png"/>
+            </ImageView>
+            <ImageView fx:id="piece3" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_ship.png"/>
+            </ImageView>
+            <ImageView fx:id="piece4" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_dog.png"/>
+            </ImageView>
+        </Pane>
+    </StackPane>
 
-   <TabPane prefHeight="205.0" prefWidth="756.0" tabClosingPolicy="UNAVAILABLE">
-     <tabs>
-       <Tab text="Hello">
-         <content>
-           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="133.0" prefWidth="583.0" />
-         </content>
-       </Tab>
-       <Tab text="World">
-         <content>
-           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="583.0" />
-         </content>
-       </Tab>
-     </tabs>
-   </TabPane>
+    <Line endX="1077.69287109375" endY="9.930134183377959E-6" />
+
+   <Pane prefHeight="186.0" prefWidth="1080.0">
+       <HBox />
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" prefHeight="40.0" prefWidth="125.0" text="Player 1 Turn">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="53.0" layoutY="70.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="125.0" text="Roll Dice" />
+      <ListView layoutX="225.0" layoutY="-6.0" prefHeight="200.0" prefWidth="851.0" />
+   </Pane>
 </VBox>

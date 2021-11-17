@@ -18,16 +18,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StartWindowController implements Initializable {
+
     @FXML
     private Label title;
     @FXML
-    private Button button2 = new Button("2 Players");
+    private Button button2 = new Button();
     @FXML
-    private Button button3 = new Button("3 Players");
+    private Button button3 = new Button();
     @FXML
-    private Button button4 = new Button("4 Players");
-    @FXML
-    private ImageView iv;
+    private Button button4 = new Button();
 
     @FXML
     protected void onButton2Click(ActionEvent event) {
@@ -41,11 +40,13 @@ public class StartWindowController implements Initializable {
     protected void onButton4Click(ActionEvent event) {
         startGame(4);
     }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        button2.setText("2 Players");
+        button3.setText("3 Players");
+        button4.setText("4 Players");
     }
+
 
     private void startGame(int playerCount) {
         try{
@@ -53,7 +54,7 @@ public class StartWindowController implements Initializable {
             Parent parent = fxmlLoader.load();
             MainWindowController controller = fxmlLoader.getController();
             controller.setPlayerCount(playerCount);
-            Scene scene = new Scene(parent, 720, 720);
+            Scene scene = new Scene(parent, 1080, 1080);
             Stage stage = new Stage();
             stage.setTitle("Monopoly");
             stage.setScene(scene);
