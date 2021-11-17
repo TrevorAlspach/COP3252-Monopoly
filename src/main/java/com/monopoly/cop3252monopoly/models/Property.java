@@ -30,7 +30,7 @@ public class Property {
         put(20, new ArrayList<>(Arrays.asList(28, 150, 450, 1000, 1200, 1400, 34, 200)));
         put(21, new ArrayList<>(Arrays.asList(35, 175, 500, 1100, 1300, 1500, 37, 200)));
         put(22, new ArrayList<>(Arrays.asList(50, 200, 600, 1400, 1700, 2000, 39, 200)));
-        //Need to add Railroads and Utilities
+        //Railroads and Utilities
     }};
 
     public static Map<Integer, String> propertyNames = new HashMap<>(){{

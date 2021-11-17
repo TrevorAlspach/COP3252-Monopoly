@@ -3,11 +3,15 @@ package com.monopoly.cop3252monopoly;
 import com.monopoly.cop3252monopoly.models.Dice;
 import com.monopoly.cop3252monopoly.models.Player;
 import javafx.application.Platform;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -76,9 +80,15 @@ public class MainWindowController implements Initializable {
     private ImageView piece4;
     @FXML
     private Label playerLabel;
+    @FXML
+    private ListView<String> listView;
     //End FXML Elements-------------------------------------------------------------------------------------------------
     //Start Monopoly Objects--------------------------------------------------------------------------------------------
+    boolean canRollDice;
+    boolean nextTurnAvailable;
+    private ObservableList<String> gameMessages;
     private int playerCount;
+    ArrayList<Player> players;
     private Player currentPlayer;
     private Dice dice;
 
@@ -86,26 +96,64 @@ public class MainWindowController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Platform.runLater(this::initializePieces);
         Platform.runLater(this::initializeGame);
+
+        gameMessages = FXCollections.observableArrayList();
+        listView.setItems(gameMessages);
     }
 
-    public void initializeGame(){
-        ArrayList<Player> players = new ArrayList<>();
+    private void initializeGame(){
+        players = new ArrayList<>();
         for (int i = 1; i <= playerCount; i++){
             players.add(new Player(i));
         }
         currentPlayer = players.get(0);
 
         dice = new Dice();
+        canRollDice = true;
+        nextTurnAvailable = false;
     }
 
     public void rollDice(ActionEvent event)
     {
+        if (!canRollDice)
+            return;
         //dice.DiceRollTurn(currentPlayer);
         currentPlayer.movePlayer(1);
         if (currentPlayer.getPlayerID() == 1){
             piece1.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
             piece1.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
         }
+        else if (currentPlayer.getPlayerID() == 2){
+            piece2.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
+            piece2.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
+        }
+        else if (currentPlayer.getPlayerID() == 3){
+            piece3.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
+            piece3.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
+        }
+        else if (currentPlayer.getPlayerID() == 4){
+            piece4.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
+            piece4.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
+        }
+        infoMessage(String.format("Player %d rolled a _ and is now on position %d", currentPlayer.getPlayerID(), currentPlayer.getCurrentPosition()));
+
+        //Logic for what property you land on will go here.
+        nextTurnAvailable = true;
+        canRollDice = false;
+    }
+
+    public void onNextTurn(ActionEvent event){
+        if (!nextTurnAvailable)
+            return;
+
+        if (currentPlayer.getPlayerID() == 4){
+            currentPlayer = players.get(0);
+        }
+        else{
+            currentPlayer = players.get(currentPlayer.getPlayerID());
+        }
+        playerLabel.setText(String.format("Player %d Turn", currentPlayer.getPlayerID()));
+        canRollDice = true;
     }
 
 
@@ -115,6 +163,7 @@ public class MainWindowController implements Initializable {
 
     private void initializePieces()
     {
+        //Set starting position of pieces
         piece1.setX(720);
         piece1.setY(695);
         piece2.setX(720);
@@ -133,5 +182,9 @@ public class MainWindowController implements Initializable {
         }
     }
 
+    private void infoMessage(String info){
+        gameMessages.add(info);
+        listView.scrollTo(gameMessages.size()-1);
+    }
 
 }
