@@ -12,22 +12,22 @@
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<VBox alignment="CENTER" prefHeight="1080" prefWidth="1080" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
+<VBox alignment="CENTER" prefHeight="1080" prefWidth="1080" spacing="10.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
     <StackPane>
         <ImageView fx:id="ivBoard" fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
             <Image url="/com/monopoly/cop3252monopoly/images/monopoly_board_colorfixed.png"/>
         </ImageView>
         <Pane fx:id="Pane" prefHeight="540.0" prefWidth="756.0">
-            <ImageView fx:id="piece1" fitHeight="20" fitWidth="20">
+            <ImageView fx:id="piece1" fitHeight="25" fitWidth="25">
                 <Image url="/com/monopoly/cop3252monopoly/images/monopoly_car.png"/>
             </ImageView>
-            <ImageView fx:id="piece2" fitHeight="20" fitWidth="20">
+            <ImageView fx:id="piece2" fitHeight="25" fitWidth="25">
                 <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hat.png"/>
             </ImageView>
-            <ImageView fx:id="piece3" fitHeight="20" fitWidth="20">
+            <ImageView fx:id="piece3" fitHeight="25" fitWidth="25">
                 <Image url="/com/monopoly/cop3252monopoly/images/monopoly_ship.png"/>
             </ImageView>
-            <ImageView fx:id="piece4" fitHeight="20" fitWidth="20">
+            <ImageView fx:id="piece4" fitHeight="25" fitWidth="25">
                 <Image url="/com/monopoly/cop3252monopoly/images/monopoly_dog.png"/>
             </ImageView>
         </Pane>
@@ -37,12 +37,12 @@
 
    <Pane prefHeight="186.0" prefWidth="1080.0">
        <HBox />
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" prefHeight="40.0" prefWidth="125.0" text="Player 1 Turn">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" prefHeight="40.0" prefWidth="125.0" text="Player 1 Turn" fx:id="playerLabel">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Button layoutX="53.0" layoutY="70.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="125.0" text="Roll Dice" />
+      <Button layoutX="53.0" layoutY="70.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="125.0" text="Roll Dice" onAction="#rollDice"/>
       <ListView layoutX="225.0" layoutY="-6.0" prefHeight="200.0" prefWidth="851.0" />
    </Pane>
 </VBox>

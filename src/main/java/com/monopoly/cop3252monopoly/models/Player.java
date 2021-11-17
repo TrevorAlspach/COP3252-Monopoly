@@ -19,6 +19,7 @@ public class Player {
         playerName = "";
         playerID = newID;
         getOutOfJailCards = 0;
+        currentPosition = 0;
     }
 
     // draw Chance card
