@@ -124,8 +124,21 @@ public class MainWindowController implements Initializable {
     {
         if (!canRollDice)
             return;
+
+        int i = 0;
+        while(true){
+            if (!dice.DiceRollTurn(currentPlayer)){
+                break;
+            }
+            i++;
+            if (i == 3){
+                currentPlayer.setCurrentPosition(40);
+                currentPlayer.setInJail(true);
+            }
+        }
+
         //dice.DiceRollTurn(currentPlayer);
-        currentPlayer.movePlayer(1);
+        currentPlayer.movePlayer(30);
         if (currentPlayer.getPlayerID() == 1){
             piece1.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
             piece1.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
@@ -161,6 +174,19 @@ public class MainWindowController implements Initializable {
         }
         playerLabel.setText(String.format("Player %d Turn", currentPlayer.getPlayerID()));
         canRollDice = true;
+
+        if (currentPlayer.isInJail()){
+            currentPlayer.setCurrentPosition(10);
+            if (currentPlayer.getNumGetOutOfJailCards() > 0){
+                currentPlayer.useGetOutOfJailCard();
+                infoMessage(String.format("Player %d used a get out of jail free card", currentPlayer.getPlayerID()));
+            }
+            else{
+                currentPlayer.setCurrentBalance(currentPlayer.getCurrentBalance() - 50);
+                infoMessage(String.format("Player %d paid $50 to get out of jail", currentPlayer.getPlayerID()));
+            }
+            currentPlayer.setInJail(false);
+        }
     }
 
 

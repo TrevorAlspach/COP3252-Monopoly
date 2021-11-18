@@ -13,6 +13,9 @@ public class Player {
     private int playerID;
     private int getOutOfJailCards;
 
+
+    private boolean inJail;
+
     public Player(int newID) {
         // constructor
         currentBalance = 1500;  // Starting balance
@@ -20,6 +23,7 @@ public class Player {
         playerID = newID;
         getOutOfJailCards = 0;
         currentPosition = 0;
+        inJail = false;
     }
 
     // draw Chance card
@@ -38,6 +42,15 @@ public class Player {
     // Name
     public String getPlayerName() { return playerName; } // getter
     public void setPlayerName(String name) { playerName = name; } // setter
+
+    //In Jail
+    public boolean isInJail() {
+        return inJail;
+    }
+
+    public void setInJail(boolean inJail) {
+        this.inJail = inJail;
+    }
 
     // Balance
     public int getCurrentBalance() { return currentBalance; } // getter

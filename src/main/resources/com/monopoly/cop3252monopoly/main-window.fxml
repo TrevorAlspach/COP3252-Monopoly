@@ -14,7 +14,7 @@
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<VBox alignment="CENTER" prefHeight="939.0" prefWidth="1440" spacing="10.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
+<VBox alignment="CENTER" prefHeight="939.0" prefWidth="1440" spacing="10.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.MainWindowController">
     <HBox maxHeight="774.0" minHeight="631.0" prefHeight="774.0" prefWidth="1440.0">
         <VBox alignment="TOP_CENTER" maxHeight="720.0" prefHeight="720.0" prefWidth="224.0" spacing="30.0" style="-fx-background-color: white;">
          <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="210.0" text="Actions">
