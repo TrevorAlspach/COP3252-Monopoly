@@ -54,7 +54,7 @@ public class StartWindowController implements Initializable {
             Parent parent = fxmlLoader.load();
             MainWindowController controller = fxmlLoader.getController();
             controller.setPlayerCount(playerCount);
-            Scene scene = new Scene(parent, 1080, 1080);
+            Scene scene = new Scene(parent, 1340, 940);
             Stage stage = new Stage();
             stage.setTitle("Monopoly");
             stage.setScene(scene);
