@@ -91,6 +91,8 @@ public class MainWindowController implements Initializable {
     private Player currentPlayer;
     private Dice dice;
     public static ArrayList<Property> properties;
+    public ChanceCardsDeck chanceCardsDeck;
+    public CommunityCardsDeck communityCardsDeck;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -103,6 +105,8 @@ public class MainWindowController implements Initializable {
 
     private void initializeGame(){
         properties = new ArrayList<>();
+        chanceCardsDeck = new ChanceCardsDeck();
+        communityCardsDeck = new CommunityCardsDeck();
         for (int i = 0; i < 40; i++){
             if (Property.propertyNames.containsKey(i)){
                 properties.add(new Property(i));
@@ -126,25 +130,25 @@ public class MainWindowController implements Initializable {
             return;
         //dice.DiceRollTurn(currentPlayer);
         currentPlayer.movePlayer(1);
-        if (currentPlayer.getPlayerID() == 1){
-            piece1.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
-            piece1.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
-        }
-        else if (currentPlayer.getPlayerID() == 2){
-            piece2.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
-            piece2.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
-        }
-        else if (currentPlayer.getPlayerID() == 3){
-            piece3.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
-            piece3.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
-        }
-        else if (currentPlayer.getPlayerID() == 4){
-            piece4.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
-            piece4.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
-        }
+        updatePlayer(currentPlayer);
         infoMessage(String.format("Player %d rolled a _ and is now on position %d", currentPlayer.getPlayerID(), currentPlayer.getCurrentPosition()));
 
-        //Logic for what property you land on will go here.
+        //Logic for what space you land on
+        if (currentPlayer.getCurrentPosition() == 7 || currentPlayer.getCurrentPosition() == 22 || currentPlayer.getCurrentPosition() == 36) {
+            // Player landed on Chance
+            ChanceCard chanceCard = chanceCardsDeck.getCard();
+            infoMessage(String.format("Player %d received a Chance Card: %s", currentPlayer.getPlayerID(), chanceCard.getTitle()));
+            performChanceCard(chanceCard, currentPlayer, players);
+            updatePlayer(currentPlayer);
+        } else if (currentPlayer.getCurrentPosition() == 2 || currentPlayer.getCurrentPosition() == 17 || currentPlayer.getCurrentPosition() == 33) {
+            // Player landed on Community Chest
+            CommunityCard communityCard = communityCardsDeck.getCard();
+            infoMessage(String.format("Player %d received a Community Chest Card: %s", currentPlayer.getPlayerID(), communityCard.getTitle()));
+            performCommunityCard(communityCard, currentPlayer, players);
+            updatePlayer(currentPlayer);
+        }
+
+
         nextTurnAvailable = true;
         canRollDice = false;
     }
@@ -163,6 +167,37 @@ public class MainWindowController implements Initializable {
         canRollDice = true;
     }
 
+    // Update player location
+    public void updatePlayerLocation(Player currentPlayer) {
+        if (currentPlayer.getPlayerID() == 1){
+            piece1.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
+            piece1.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
+        }
+        else if (currentPlayer.getPlayerID() == 2){
+            piece2.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
+            piece2.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
+        }
+        else if (currentPlayer.getPlayerID() == 3){
+            piece3.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
+            piece3.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
+        }
+        else if (currentPlayer.getPlayerID() == 4){
+            piece4.setX(xyValues.get(currentPlayer.getCurrentPosition()).get(0));
+            piece4.setY(xyValues.get(currentPlayer.getCurrentPosition()).get(1));
+        }
+    }
+
+    // Update player balance
+    public void updatePlayerBalance(Player currentPlayer) {
+        infoMessage(String.format("Player %d has a balance of %d", currentPlayer.getPlayerID(), currentPlayer.getCurrentBalance()));
+    }
+
+    // Update location, balance, and properties of currentPlayer
+    public void updatePlayer(Player currentPlayer) {
+        updatePlayerLocation(currentPlayer);
+        updatePlayerBalance(currentPlayer);
+        // update properties
+    }
 
     public void setPlayerCount(int playerCount) {
         this.playerCount = playerCount;
