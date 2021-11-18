@@ -2,6 +2,7 @@ package com.monopoly.cop3252monopoly;
 
 import com.monopoly.cop3252monopoly.models.Dice;
 import com.monopoly.cop3252monopoly.models.Player;
+import com.monopoly.cop3252monopoly.models.Property;
 import javafx.application.Platform;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
@@ -84,13 +85,14 @@ public class MainWindowController implements Initializable {
     private ListView<String> listView;
     //End FXML Elements-------------------------------------------------------------------------------------------------
     //Start Monopoly Objects--------------------------------------------------------------------------------------------
-    boolean canRollDice;
-    boolean nextTurnAvailable;
+    private boolean canRollDice;
+    private boolean nextTurnAvailable;
     private ObservableList<String> gameMessages;
     private int playerCount;
-    ArrayList<Player> players;
+    private ArrayList<Player> players;
     private Player currentPlayer;
     private Dice dice;
+    public static ArrayList<Property> properties;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -102,6 +104,13 @@ public class MainWindowController implements Initializable {
     }
 
     private void initializeGame(){
+        properties = new ArrayList<>();
+        for (int i = 0; i < 40; i++){
+            if (Property.propertyNames.containsKey(i)){
+                properties.add(new Property(i));
+            }
+        }
+
         players = new ArrayList<>();
         for (int i = 1; i <= playerCount; i++){
             players.add(new Player(i));
