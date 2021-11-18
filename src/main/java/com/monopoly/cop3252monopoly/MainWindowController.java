@@ -153,7 +153,7 @@ public class MainWindowController implements Initializable {
         if (!nextTurnAvailable)
             return;
 
-        if (currentPlayer.getPlayerID() == 4){
+        if (currentPlayer.getPlayerID() == playerCount){
             currentPlayer = players.get(0);
         }
         else{
