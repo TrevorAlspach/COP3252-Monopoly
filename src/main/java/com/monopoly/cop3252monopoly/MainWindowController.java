@@ -140,17 +140,33 @@ public class MainWindowController implements Initializable {
         int i = 0;
         while (dice.DiceRollTurn(currentPlayer)) {
             i++;
+            updatePlayer(currentPlayer);
+            infoMessage(String.format("Player %d rolled a %d and is now on position %d", currentPlayer.getPlayerID(), dice.getLastRoll(), currentPlayer.getCurrentPosition()));
+            performSpaceLogic();
             if (i == 3) {
                 currentPlayer.setCurrentPosition(40);
                 currentPlayer.setInJail(true);
+                updatePlayer(currentPlayer);
+                infoMessage(String.format("Player %d rolled 3 doubles in a row and is now in jail", currentPlayer.getPlayerID()));
+                break;
             }
         }
 
-        //dice.DiceRollTurn(currentPlayer);
-        updatePlayerLocation(currentPlayer);
-        infoMessage(String.format("Player %d rolled a %d and is now on position %d", currentPlayer.getPlayerID(), dice.getLastRoll(), currentPlayer.getCurrentPosition()));
+        updatePlayer(currentPlayer);
+        if (!currentPlayer.isInJail()) {
+            infoMessage(String.format("Player %d rolled a %d and is now on position %d", currentPlayer.getPlayerID(), dice.getLastRoll(), currentPlayer.getCurrentPosition()));
+        }
+        // @Trevor The big if statement block that determined what would happen for what spot you landed on
+        // has been moved to inside this method, so it could be called multiple times
+        //    V V V V V
+        performSpaceLogic();
 
-        //Logic for what space you land on
+        nextTurnAvailable = true;
+        canRollDice = false;
+    }
+
+    //Logic for what space you land on
+    public void performSpaceLogic() {
         if (currentPlayer.getCurrentPosition() == 7 || currentPlayer.getCurrentPosition() == 22 || currentPlayer.getCurrentPosition() == 36) {
             // Player landed on Chance
             ChanceCard chanceCard = chanceCardsDeck.getCard();
@@ -183,11 +199,11 @@ public class MainWindowController implements Initializable {
             updatePlayerBalance(currentPlayer);
         } else { // Player lands on a property, needs logic
             infoMessage(String.format("Player %d landed on a property", currentPlayer.getPlayerID()));
+
+            // TODO: Trevor all property logic goes inside this else block
+
+            updatePlayerBalance(currentPlayer);
         }
-
-
-        nextTurnAvailable = true;
-        canRollDice = false;
     }
 
     public void onNextTurn(ActionEvent event){
@@ -210,7 +226,7 @@ public class MainWindowController implements Initializable {
                 infoMessage(String.format("Player %d used a get out of jail free card", currentPlayer.getPlayerID()));
             }
             else{
-                currentPlayer.setCurrentBalance(currentPlayer.getCurrentBalance() - 50);
+                currentPlayer.loseMoney(50);
                 infoMessage(String.format("Player %d paid $50 to get out of jail", currentPlayer.getPlayerID()));
             }
             currentPlayer.setInJail(false);
@@ -293,6 +309,16 @@ public class MainWindowController implements Initializable {
         listView.scrollTo(gameMessages.size()-1);
     }
 
+    // Debug message to show various data in the text box. Strictly for testing only, should not be called in final product
+    public void debugMessage() {
+        infoMessage(String.format("%d = %d + %d", dice.getLastRoll(), dice.getDie1Roll(), dice.getDie2Roll()));
+        if (dice.lastRollIsDouble()) {
+            infoMessage("Double!");
+        } else {
+            infoMessage("Not Double!");
+        }
+    }
+
     public void performChanceCard(ChanceCard chanceCard, Player player, ArrayList<Player> players) {
         int id = chanceCard.getChanceID();
 
@@ -333,7 +359,10 @@ public class MainWindowController implements Initializable {
         else if (id == 8) { player.addMoney(50); } // Bank pays you dividend of $50
         else if (id == 9) { player.addGetOutOfJailCard(); } // Get Out of Jail Free
         else if (id == 10) { player.movePlayer(-3); } // Go Back 3 Spaces
-        else if (id == 11) { player.setCurrentPosition(40); } // Go to Jail. Go directly to Jail, do not pass Go, do not collect $200
+        else if (id == 11) { // Go to Jail. Go directly to Jail, do not pass Go, do not collect $200
+            player.setCurrentPosition(40);
+            player.setInJail(true);
+        }
         else if (id == 12) { } // Make general repairs on all your property. For each house pay $25. For each hotel pay $100
         else if (id == 13) { player.loseMoney(15); } // Speeding fine $15
         else if (id == 14) { // Take a trip to Reading Railroad. If you pass Go, collect $200
@@ -359,7 +388,10 @@ public class MainWindowController implements Initializable {
         else if (id == 3) { player.loseMoney(50); } // Doctor’s fee. Pay $50
         else if (id == 4) { player.addMoney(50); } // From sale of stock you get $50
         else if (id == 5) { player.addGetOutOfJailCard(); } // Get Out of Jail Free
-        else if (id == 6) { player.setCurrentPosition(40); } // Go to Jail. Go directly to jail, do not pass Go, do not collect $200
+        else if (id == 6) { // Go to Jail. Go directly to jail, do not pass Go, do not collect $200
+            player.setCurrentPosition(40);
+            player.setInJail(true);
+        }
         else if (id == 7) { player.addMoney(100); } // Holiday fund matures. Receive $100
         else if (id == 8) { player.addMoney(20); } // Income tax refund. Collect $20
         else if (id == 9) { // It is your birthday. Collect $10 from every player
@@ -373,7 +405,7 @@ public class MainWindowController implements Initializable {
         else if (id == 10) { player.addMoney(100); } // Life insurance matures. Collect $100
         else if (id == 11) { player.loseMoney(100); } // Pay hospital fees of $100
         else if (id == 12) { player.loseMoney(50); } // Pay school fees of $50
-        else if (id == 13) { player.addMoney(25); } // Receive $25 consultancy fee
+        else if (id == 13) { player.loseMoney(25); } // Receive $25 consultancy fee
         else if (id == 14) {  } // You are assessed for street repair. $40 per house. $115 per hotel
         else if (id == 15) { player.addMoney(10); } // You have won second prize in a beauty contest. Collect $10
         else if (id == 16) { player.addMoney(100); } // You inherit $100
