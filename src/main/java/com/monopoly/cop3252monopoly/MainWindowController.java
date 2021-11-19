@@ -142,9 +142,8 @@ public class MainWindowController implements Initializable {
         }
 
         //dice.DiceRollTurn(currentPlayer);
-        currentPlayer.movePlayer(1);
-        updatePlayer(currentPlayer);
-        infoMessage(String.format("Player %d rolled a _ and is now on position %d", currentPlayer.getPlayerID(), currentPlayer.getCurrentPosition()));
+        updatePlayerLocation(currentPlayer);
+        infoMessage(String.format("Player %d rolled a %d and is now on position %d", currentPlayer.getPlayerID(), dice.getLastRoll(), currentPlayer.getCurrentPosition()));
 
         //Logic for what space you land on
         if (currentPlayer.getCurrentPosition() == 7 || currentPlayer.getCurrentPosition() == 22 || currentPlayer.getCurrentPosition() == 36) {
@@ -159,6 +158,26 @@ public class MainWindowController implements Initializable {
             infoMessage(String.format("Player %d received a Community Chest Card: %s", currentPlayer.getPlayerID(), communityCard.getTitle()));
             performCommunityCard(communityCard, currentPlayer, players);
             updatePlayer(currentPlayer);
+        } else if (currentPlayer.getCurrentPosition() == 0) { // Landed on go, give them $200
+            currentPlayer.addMoney(200);
+            updatePlayerBalance(currentPlayer);
+        } else if (currentPlayer.getCurrentPosition() == 4) { // Landed on Income Tax
+            currentPlayer.loseMoney(200);
+            updatePlayerBalance(currentPlayer);
+        } else if (currentPlayer.getCurrentPosition() == 10) { // Just visiting
+            infoMessage("Say hi to the people in jail >:)");
+        } else if (currentPlayer.getCurrentPosition() == 20) { // Free Parking
+            infoMessage("Enjoy your free parking");
+        } else if (currentPlayer.getCurrentPosition() == 30) { // Go To Jail
+            infoMessage(String.format("Player %d committed tax fraud and got caught. Go directly to jail!", currentPlayer.getPlayerID()));
+            currentPlayer.setCurrentPosition(40);
+            currentPlayer.setInJail(true);
+            updatePlayerLocation(currentPlayer);
+        } else if (currentPlayer.getCurrentPosition() == 38) { // Luxury Tax
+            currentPlayer.loseMoney(100);
+            updatePlayerBalance(currentPlayer);
+        } else { // Player lands on a property, needs logic
+            infoMessage(String.format("Player %d landed on a property", currentPlayer.getPlayerID()));
         }
 
 

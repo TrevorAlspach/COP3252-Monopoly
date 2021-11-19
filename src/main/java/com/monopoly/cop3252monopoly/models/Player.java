@@ -66,6 +66,7 @@ public class Player {
         if (currentPosition > 39) // user is going past boardwalk, and back at the start
         {
             currentPosition -= 40;
+            currentBalance += 200; // for passing go
         }
     }
 

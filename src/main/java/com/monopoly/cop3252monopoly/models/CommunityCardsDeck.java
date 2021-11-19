@@ -18,7 +18,7 @@ public class CommunityCardsDeck {
     // Get a random card, 1 - 16
     public CommunityCard getCard() {
         Random random = new Random();
-        int cardID = random.nextInt(16) + 1;
+        int cardID = random.nextInt(16);
         return theDeck.get(cardID);
     }
 
