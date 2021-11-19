@@ -81,6 +81,14 @@ public class MainWindowController implements Initializable {
     private Label playerLabel;
     @FXML
     private ListView<String> listView;
+    @FXML
+    private Label player1Balance;
+    @FXML
+    private Label player2Balance;
+    @FXML
+    private Label player3Balance;
+    @FXML
+    private Label player4Balance;
     //End FXML Elements-------------------------------------------------------------------------------------------------
     //Start Monopoly Objects--------------------------------------------------------------------------------------------
     private boolean canRollDice;
@@ -130,12 +138,9 @@ public class MainWindowController implements Initializable {
             return;
 
         int i = 0;
-        while(true){
-            if (!dice.DiceRollTurn(currentPlayer)){
-                break;
-            }
+        while (dice.DiceRollTurn(currentPlayer)) {
             i++;
-            if (i == 3){
+            if (i == 3) {
                 currentPlayer.setCurrentPosition(40);
                 currentPlayer.setInJail(true);
             }
@@ -196,7 +201,7 @@ public class MainWindowController implements Initializable {
             currentPlayer = players.get(currentPlayer.getPlayerID());
         }
         playerLabel.setText(String.format("Player %d Turn", currentPlayer.getPlayerID()));
-        canRollDice = true;
+
 
         if (currentPlayer.isInJail()){
             currentPlayer.setCurrentPosition(10);
@@ -209,7 +214,10 @@ public class MainWindowController implements Initializable {
                 infoMessage(String.format("Player %d paid $50 to get out of jail", currentPlayer.getPlayerID()));
             }
             currentPlayer.setInJail(false);
+            updatePlayer(currentPlayer);
         }
+        canRollDice = true;
+        nextTurnAvailable = false;
     }
 
     // Update player location
@@ -234,7 +242,18 @@ public class MainWindowController implements Initializable {
 
     // Update player balance
     public void updatePlayerBalance(Player currentPlayer) {
-        infoMessage(String.format("Player %d has a balance of %d", currentPlayer.getPlayerID(), currentPlayer.getCurrentBalance()));
+        if (currentPlayer.getPlayerID() == 1){
+            player1Balance.setText(String.format("$%d", currentPlayer.getCurrentBalance()));
+        }
+        else if (currentPlayer.getPlayerID() == 2){
+            player2Balance.setText(String.format("$%d", currentPlayer.getCurrentBalance()));
+        }
+        else if (currentPlayer.getPlayerID() == 3){
+            player3Balance.setText(String.format("$%d", currentPlayer.getCurrentBalance()));
+        }
+        else if (currentPlayer.getPlayerID() == 4){
+            player4Balance.setText(String.format("$%d", currentPlayer.getCurrentBalance()));
+        }
     }
 
     // Update location, balance, and properties of currentPlayer

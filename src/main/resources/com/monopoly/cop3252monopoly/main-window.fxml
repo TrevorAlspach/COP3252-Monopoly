@@ -74,7 +74,7 @@
                      <Font size="14.0" />
                   </font>
                </Label>
-               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500">
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500" fx:id="player1Balance">
                   <font>
                      <Font size="14.0" />
                   </font>
@@ -108,7 +108,7 @@
                      <Font size="14.0" />
                   </font>
                </Label>
-               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500">
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500" fx:id="player2Balance">
                   <font>
                      <Font size="14.0" />
                   </font>
@@ -142,7 +142,7 @@
                      <Font size="14.0" />
                   </font>
                </Label>
-               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500">
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500" fx:id="player3Balance">
                   <font>
                      <Font size="14.0" />
                   </font>
@@ -176,7 +176,7 @@
                      <Font size="14.0" />
                   </font>
                </Label>
-               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500">
+               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="131.0" text="\$1500" fx:id="player4Balance">
                   <font>
                      <Font size="14.0" />
                   </font>
