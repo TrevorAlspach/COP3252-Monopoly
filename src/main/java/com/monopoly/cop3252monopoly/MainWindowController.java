@@ -200,7 +200,7 @@ public class MainWindowController implements Initializable {
         } else { // Player lands on a property, needs logic
             infoMessage(String.format("Player %d landed on a property", currentPlayer.getPlayerID()));
 
-            // TODO: Trevor all property logic goes inside this else block
+            // TODO: All property logic goes inside this else block
 
             updatePlayerBalance(currentPlayer);
         }
