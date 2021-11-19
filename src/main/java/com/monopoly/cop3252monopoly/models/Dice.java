@@ -14,7 +14,7 @@ public class Dice {
         random = new Random();
     }
 
-    public void DiceRollTurn(Player player) {
+    public boolean DiceRollTurn(Player player) {
         // for normal turns
         int sum, x, y;
         x = random.nextInt(6);
@@ -22,33 +22,7 @@ public class Dice {
         sum = dice1[x] + dice2[y];
         player.movePlayer(sum);
 
-        if (x == y)
-        {
-            // doubles get you out of jail!
-            if (player.getCurrentPosition() == 10)
-            {
-                // let them out of jail :0
-            }
-
-            // doubles! notify player that they can go again
-            x = random.nextInt(6);
-            y = random.nextInt(6);
-            sum = dice1[x] + dice2[y];
-            player.movePlayer(sum);
-
-            if (x == y)
-            {
-                // doubles! notify player that they can go again (the final time)
-                x = random.nextInt(6);
-                y = random.nextInt(6);
-                if (x == y)
-                {
-                    player.setCurrentPosition(10);
-                    // you're in jail >:)
-                }
-                player.movePlayer(sum);
-            }
-        }
+        return x == y;
     }
 
     public int DiceRollMultiplied(Player sender, Player receiver, int mult) {
