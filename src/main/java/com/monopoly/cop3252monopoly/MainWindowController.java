@@ -333,7 +333,7 @@ public class MainWindowController implements Initializable {
         else if (id == 8) { player.addMoney(50); } // Bank pays you dividend of $50
         else if (id == 9) { player.addGetOutOfJailCard(); } // Get Out of Jail Free
         else if (id == 10) { player.movePlayer(-3); } // Go Back 3 Spaces
-        else if (id == 11) { player.setCurrentPosition(10); } // Go to Jail. Go directly to Jail, do not pass Go, do not collect $200
+        else if (id == 11) { player.setCurrentPosition(40); } // Go to Jail. Go directly to Jail, do not pass Go, do not collect $200
         else if (id == 12) { } // Make general repairs on all your property. For each house pay $25. For each hotel pay $100
         else if (id == 13) { player.loseMoney(15); } // Speeding fine $15
         else if (id == 14) { // Take a trip to Reading Railroad. If you pass Go, collect $200
@@ -359,7 +359,7 @@ public class MainWindowController implements Initializable {
         else if (id == 3) { player.loseMoney(50); } // Doctor’s fee. Pay $50
         else if (id == 4) { player.addMoney(50); } // From sale of stock you get $50
         else if (id == 5) { player.addGetOutOfJailCard(); } // Get Out of Jail Free
-        else if (id == 6) { player.setCurrentPosition(10); } // Go to Jail. Go directly to jail, do not pass Go, do not collect $200
+        else if (id == 6) { player.setCurrentPosition(40); } // Go to Jail. Go directly to jail, do not pass Go, do not collect $200
         else if (id == 7) { player.addMoney(100); } // Holiday fund matures. Receive $100
         else if (id == 8) { player.addMoney(20); } // Income tax refund. Collect $20
         else if (id == 9) { // It is your birthday. Collect $10 from every player
