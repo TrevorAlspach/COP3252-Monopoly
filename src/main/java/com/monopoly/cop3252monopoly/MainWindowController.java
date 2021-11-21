@@ -78,6 +78,30 @@ public class MainWindowController implements Initializable {
     @FXML
     private ImageView piece4;
     @FXML
+    private ImageView dice1;
+    @FXML
+    private ImageView dice2;
+    @FXML
+    private ImageView dice3;
+    @FXML
+    private ImageView dice4;
+    @FXML
+    private ImageView dice5;
+    @FXML
+    private ImageView dice6;
+    @FXML
+    private ImageView dice11;
+    @FXML
+    private ImageView dice22;
+    @FXML
+    private ImageView dice33;
+    @FXML
+    private ImageView dice44;
+    @FXML
+    private ImageView dice55;
+    @FXML
+    private ImageView dice66;
+    @FXML
     private Label playerLabel;
     @FXML
     private ListView<String> listView;
@@ -105,6 +129,7 @@ public class MainWindowController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Platform.runLater(this::initializePieces);
+        Platform.runLater(this::initializeDice);
         Platform.runLater(this::initializeGame);
 
         gameMessages = FXCollections.observableArrayList();
@@ -134,6 +159,19 @@ public class MainWindowController implements Initializable {
 
     public void rollDice(ActionEvent event)
     {
+        dice1.setVisible(false);
+        dice2.setVisible(false);
+        dice3.setVisible(false);
+        dice4.setVisible(false);
+        dice5.setVisible(false);
+        dice6.setVisible(false);
+        dice11.setVisible(false);
+        dice22.setVisible(false);
+        dice33.setVisible(false);
+        dice44.setVisible(false);
+        dice55.setVisible(false);
+        dice66.setVisible(false);
+
         if (!canRollDice)
             return;
 
@@ -151,11 +189,88 @@ public class MainWindowController implements Initializable {
                 break;
             }
         }
+        switch (dice.getDie1Roll()) {
+            case 1:
+                dice1.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice11.setVisible(true);
+                }
+                break;
+            case 2: dice2.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice22.setVisible(true);
+                }
+                break;
+            case 3: dice3.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice33.setVisible(true);
+                }
+                break;
+            case 4: dice4.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice44.setVisible(true);
+                }
+                break;
+            case 5: dice5.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice55.setVisible(true);
+                }break;
+            case 6: dice6.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice66.setVisible(true);
+                }
+                break;
+        }
+        switch (dice.getDie2Roll()) {
+            case 1: dice1.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice11.setVisible(true);
+                }
+                break;
+            case 2: dice2.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice22.setVisible(true);
+                }
+                break;
+            case 3: dice3.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice33.setVisible(true);
+                }
+                break;
+            case 4: dice4.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice44.setVisible(true);
+                }
+                break;
+            case 5: dice5.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice55.setVisible(true);
+                }
+                break;
+            case 6: dice6.setVisible(true);
+                if (dice.lastRollIsDouble())
+                {
+                    dice66.setVisible(true);
+                }
+                break;
+        }
 
         updatePlayer(currentPlayer);
         if (!currentPlayer.isInJail()) {
             infoMessage(String.format("Player %d rolled a %d and is now on position %d", currentPlayer.getPlayerID(), dice.getLastRoll(), currentPlayer.getCurrentPosition()));
         }
+
         // @Trevor The big if statement block that determined what would happen for what spot you landed on
         // has been moved to inside this method, so it could be called multiple times
         //    V V V V V
@@ -302,6 +417,48 @@ public class MainWindowController implements Initializable {
             piece3.setVisible(false);
             piece4.setVisible(false);
         }
+    }
+
+    private void initializeDice()
+    {
+        dice1.setX(400);
+        dice1.setY(400);
+        dice2.setX(450);
+        dice2.setY(450);
+        dice3.setX(400);
+        dice3.setY(300);
+        dice4.setX(300);
+        dice4.setY(400);
+        dice5.setX(300);
+        dice5.setY(300);
+        dice6.setX(350);
+        dice6.setY(350);
+        dice11.setX(320);
+        dice11.setY(320);
+        dice22.setX(370);
+        dice22.setY(370);
+        dice33.setX(320);
+        dice33.setY(420);
+        dice44.setX(420);
+        dice44.setY(320);
+        dice55.setX(420);
+        dice55.setY(420);
+        dice66.setX(470);
+        dice66.setY(470);
+
+
+        dice1.setVisible(false);
+        dice2.setVisible(false);
+        dice3.setVisible(false);
+        dice4.setVisible(false);
+        dice5.setVisible(false);
+        dice6.setVisible(false);
+        dice11.setVisible(false);
+        dice22.setVisible(false);
+        dice33.setVisible(false);
+        dice44.setVisible(false);
+        dice55.setVisible(false);
+        dice66.setVisible(false);
     }
 
     private void infoMessage(String info){

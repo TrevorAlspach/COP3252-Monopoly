@@ -58,6 +58,42 @@
             <ImageView fx:id="piece4" fitHeight="25" fitWidth="25">
                 <Image url="/com/monopoly/cop3252monopoly/images/monopoly_dog.png"/>
             </ImageView>
+            <ImageView fx:id="dice1" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_1.png"/>
+            </ImageView>
+            <ImageView fx:id="dice2" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_2.png"/>
+            </ImageView>
+            <ImageView fx:id="dice3" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_3.png"/>
+            </ImageView>
+            <ImageView fx:id="dice4" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_4.png"/>
+            </ImageView>
+            <ImageView fx:id="dice5" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_5.png"/>
+            </ImageView>
+            <ImageView fx:id="dice6" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_6.png"/>
+            </ImageView>
+            <ImageView fx:id="dice11" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_1.png"/>
+            </ImageView>
+            <ImageView fx:id="dice22" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_2.png"/>
+            </ImageView>
+            <ImageView fx:id="dice33" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_3.png"/>
+            </ImageView>
+            <ImageView fx:id="dice44" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_4.png"/>
+            </ImageView>
+            <ImageView fx:id="dice55" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_5.png"/>
+            </ImageView>
+            <ImageView fx:id="dice66" fitHeight="50" fitWidth="50">
+                <Image url="/com/monopoly/cop3252monopoly/images/dice_6.png"/>
+            </ImageView>
         </Pane>
         </StackPane>
       <Line endX="107.99984741210938" endY="-1.9142136573791504" startX="107.99984741210938" startY="781.378662109375" />
