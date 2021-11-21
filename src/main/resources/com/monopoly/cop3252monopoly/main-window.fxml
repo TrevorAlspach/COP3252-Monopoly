@@ -94,6 +94,12 @@
             <ImageView fx:id="dice66" fitHeight="50" fitWidth="50">
                 <Image url="/com/monopoly/cop3252monopoly/images/dice_6.png"/>
             </ImageView>
+            <ImageView fx:id="chance" fitHeight="100" fitWidth="150">
+                <Image url="/com/monopoly/cop3252monopoly/images/chance.png"/>
+            </ImageView>
+            <ImageView fx:id="community" fitHeight="100" fitWidth="150">
+                <Image url="/com/monopoly/cop3252monopoly/images/communitychest.png"/>
+            </ImageView>
         </Pane>
         </StackPane>
       <Line endX="107.99984741210938" endY="-1.9142136573791504" startX="107.99984741210938" startY="781.378662109375" />

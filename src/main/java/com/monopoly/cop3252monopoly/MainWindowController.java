@@ -102,6 +102,10 @@ public class MainWindowController implements Initializable {
     @FXML
     private ImageView dice66;
     @FXML
+    private ImageView chance;
+    @FXML
+    private ImageView community;
+    @FXML
     private Label playerLabel;
     @FXML
     private ListView<String> listView;
@@ -128,6 +132,13 @@ public class MainWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        chance.setX(515);
+        chance.setY(500);
+        chance.setRotate(-45);
+        community.setX(205);
+        community.setY(180);
+        community.setRotate(135);
+
         Platform.runLater(this::initializePieces);
         Platform.runLater(this::initializeDice);
         Platform.runLater(this::initializeGame);
