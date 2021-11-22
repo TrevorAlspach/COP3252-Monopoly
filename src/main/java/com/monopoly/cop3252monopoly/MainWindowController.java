@@ -7,7 +7,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -15,7 +18,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -117,16 +122,25 @@ public class MainWindowController implements Initializable {
     private Label player3Balance;
     @FXML
     private Label player4Balance;
+    @FXML
+    private Label player1PropertyCount;
+    @FXML
+    private Label player2PropertyCount;
+    @FXML
+    private Label player3PropertyCount;
+    @FXML
+    private Label player4PropertyCount;
     //End FXML Elements-------------------------------------------------------------------------------------------------
     //Start Monopoly Objects--------------------------------------------------------------------------------------------
     private boolean canRollDice;
     private boolean nextTurnAvailable;
+    private boolean buyChoiceAvailable;
     private ObservableList<String> gameMessages;
     private int playerCount;
     private ArrayList<Player> players;
     private Player currentPlayer;
     private Dice dice;
-    public static ArrayList<Property> properties;
+    public static HashMap<Integer, Property> properties;
     public ChanceCardsDeck chanceCardsDeck;
     public CommunityCardsDeck communityCardsDeck;
 
@@ -148,12 +162,12 @@ public class MainWindowController implements Initializable {
     }
 
     private void initializeGame(){
-        properties = new ArrayList<>();
+        properties = new HashMap<Integer, Property>();
         chanceCardsDeck = new ChanceCardsDeck();
         communityCardsDeck = new CommunityCardsDeck();
         for (int i = 0; i < 40; i++){
             if (Property.propertyNames.containsKey(i)){
-                properties.add(new Property(i));
+                properties.put(i, new Property(i));
             }
         }
 
@@ -166,10 +180,14 @@ public class MainWindowController implements Initializable {
         dice = new Dice();
         canRollDice = true;
         nextTurnAvailable = false;
+        buyChoiceAvailable = false;
     }
 
     public void rollDice(ActionEvent event)
     {
+        if (!canRollDice)
+            return;
+
         dice1.setVisible(false);
         dice2.setVisible(false);
         dice3.setVisible(false);
@@ -183,15 +201,12 @@ public class MainWindowController implements Initializable {
         dice55.setVisible(false);
         dice66.setVisible(false);
 
-        if (!canRollDice)
-            return;
-
-        int i = 0;
+  /*      int i = 0;
         while (dice.DiceRollTurn(currentPlayer)) {
             i++;
             updatePlayer(currentPlayer);
             infoMessage(String.format("Player %d rolled a %d and is now on position %d", currentPlayer.getPlayerID(), dice.getLastRoll(), currentPlayer.getCurrentPosition()));
-            performSpaceLogic();
+            performSpaceLogic(dice.getLastRoll());
             if (i == 3) {
                 currentPlayer.setCurrentPosition(40);
                 currentPlayer.setInJail(true);
@@ -199,7 +214,17 @@ public class MainWindowController implements Initializable {
                 infoMessage(String.format("Player %d rolled 3 doubles in a row and is now in jail", currentPlayer.getPlayerID()));
                 break;
             }
+        }*/
+
+        boolean rollAgain = dice.DiceRollTurn(currentPlayer);
+        if (dice.getDoublesCount() == 3){
+            dice.setDoublesCount(0);
+            currentPlayer.setCurrentPosition(40);
+            currentPlayer.setInJail(true);
+            infoMessage(String.format("Player %d rolled 3 doubles in a row and is now in jail", currentPlayer.getPlayerID()));
+            return;
         }
+
         switch (dice.getDie1Roll()) {
             case 1:
                 dice1.setVisible(true);
@@ -285,14 +310,22 @@ public class MainWindowController implements Initializable {
         // @Trevor The big if statement block that determined what would happen for what spot you landed on
         // has been moved to inside this method, so it could be called multiple times
         //    V V V V V
-        performSpaceLogic();
+        performSpaceLogic(dice.getLastRoll());
+
+        if (rollAgain){
+            infoMessage(String.format("Player %d rolled doubles, roll again!", currentPlayer.getPlayerID()));
+            return;
+        }
+        else{
+            dice.setDoublesCount(0);
+        }
 
         nextTurnAvailable = true;
         canRollDice = false;
     }
 
     //Logic for what space you land on
-    public void performSpaceLogic() {
+    public void performSpaceLogic(int lastRoll) {
         if (currentPlayer.getCurrentPosition() == 7 || currentPlayer.getCurrentPosition() == 22 || currentPlayer.getCurrentPosition() == 36) {
             // Player landed on Chance
             ChanceCard chanceCard = chanceCardsDeck.getCard();
@@ -324,16 +357,104 @@ public class MainWindowController implements Initializable {
             currentPlayer.loseMoney(100);
             updatePlayerBalance(currentPlayer);
         } else { // Player lands on a property, needs logic
-            infoMessage(String.format("Player %d landed on a property", currentPlayer.getPlayerID()));
 
             // TODO: All property logic goes inside this else block
+            Property propertyLandedOn = properties.get(currentPlayer.getCurrentPosition());
+            if (!propertyLandedOn.isOwned()){
+                //Property isn't owned, you can buy it.
+                if (propertyLandedOn.getPropertyCost() < currentPlayer.getCurrentBalance()) {
+                    //You can afford the property
+                    infoMessage(String.format("%s is unowned, Player %d would you like to buy it for $%d?",
+                            propertyLandedOn.getPropertyTitle(), currentPlayer.getPlayerID(), propertyLandedOn.getPropertyCost()));
+                    buyChoiceAvailable = true;
+                }
+                else{
+                    //You can't afford the property
+                    infoMessage(String.format("%s is unowned, but Player %d cannot afford to buy it",
+                            propertyLandedOn.getPropertyTitle(), currentPlayer.getPlayerID()));
+                    return;
+                }
+            }
+            else{
+                Player propertyOwner = players.get(propertyLandedOn.getOwner() - 1);
+                int rent = 0;
+                //Property is already owned, pay rent.
+                if (propertyLandedOn.isRailroad()){
+                    //Railroad logic
+                    int railroadsOwned = 0;
+                    for (int i = 5; i <= 35; i+=10){
+                        if (properties.get(i).getOwner() == propertyOwner.getPlayerID()){
+                            railroadsOwned++;
+                        }
+                    }
+                    rent = Property.propertyValues.get(currentPlayer.getCurrentPosition()).get(railroadsOwned);
+                    currentPlayer.loseMoney(rent);
+                    propertyOwner.addMoney(rent);
+                }
+                else if (propertyLandedOn.isUtility()){
+                    //Utility Logic
+                    int utilitiesOwned = 0;
+                    if (properties.get(12).getOwner() == propertyOwner.getPlayerID()){
+                        utilitiesOwned++;
+                    }
+                    if (properties.get(28).getOwner() == propertyOwner.getPlayerID()){
+                        utilitiesOwned++;
+                    }
+                    if (utilitiesOwned == 1){
+                        rent = 4*lastRoll;
+                        currentPlayer.loseMoney(rent);
+                        propertyOwner.addMoney(rent);
+                    }
+                    else{
+                        rent = 10*lastRoll;
+                        currentPlayer.loseMoney(rent);
+                        propertyOwner.addMoney(rent);
+                    }
+                }
+                else{
+                    //Normal Property Logic
+                    rent = Property.propertyValues.get(currentPlayer.getCurrentPosition()).get(propertyLandedOn.getHouseCount());
+                    currentPlayer.loseMoney(rent);
+                    propertyOwner.addMoney(rent);
+                }
+                infoMessage(String.format("Player %d paid Player %d $%d in rent", currentPlayer.getPlayerID(), propertyOwner.getPlayerID(), rent));
+                updatePlayerBalance(propertyOwner);
+            }
 
             updatePlayerBalance(currentPlayer);
         }
     }
 
+    public void onBuyProperty(ActionEvent event){
+        //Will execute if player clicks yes button when prompted to buy a property
+        if (!buyChoiceAvailable){
+            return;
+        }
+        Property propertyToBuy = properties.get(currentPlayer.getCurrentPosition());
+        infoMessage(String.format("Player %d bought %s for $%d",
+                currentPlayer.getPlayerID(), propertyToBuy.getPropertyTitle(), propertyToBuy.getPropertyCost()));
+        propertyToBuy.setOwner(currentPlayer.getPlayerID());
+        propertyToBuy.setOwned(true);
+        currentPlayer.loseMoney(propertyToBuy.getPropertyCost());
+        updatePlayerBalance(currentPlayer);
+        updatePropertiesOwned(currentPlayer);
+
+        buyChoiceAvailable = false;
+    }
+
+    public void onRefuseProperty(ActionEvent event){
+        if (!buyChoiceAvailable){
+            return;
+        }
+        Property propertyToBuy = properties.get(currentPlayer.getCurrentPosition());
+        infoMessage(String.format("Player %d decided to not buy %s",
+                currentPlayer.getPlayerID(), propertyToBuy.getPropertyTitle()));
+        buyChoiceAvailable = false;
+    }
+
+
     public void onNextTurn(ActionEvent event){
-        if (!nextTurnAvailable)
+        if (!nextTurnAvailable || buyChoiceAvailable)
             return;
 
         if (currentPlayer.getPlayerID() == playerCount){
@@ -395,6 +516,25 @@ public class MainWindowController implements Initializable {
         }
         else if (currentPlayer.getPlayerID() == 4){
             player4Balance.setText(String.format("$%d", currentPlayer.getCurrentBalance()));
+        }
+    }
+
+    public void updatePropertiesOwned(Player currentPlayer){
+        if (currentPlayer.getPlayerID() == 1){
+            int newPropertyCount = Integer.parseInt(player1PropertyCount.getText()) + 1;
+            player1PropertyCount.setText(String.valueOf(newPropertyCount));
+        }
+        else if (currentPlayer.getPlayerID() == 2){
+            int newPropertyCount = Integer.parseInt(player2PropertyCount.getText()) + 1;
+            player2PropertyCount.setText(String.valueOf(newPropertyCount));
+        }
+        else if (currentPlayer.getPlayerID() == 3){
+            int newPropertyCount = Integer.parseInt(player3PropertyCount.getText()) + 1;
+            player3PropertyCount.setText(String.valueOf(newPropertyCount));
+        }
+        else if (currentPlayer.getPlayerID() == 4){
+            int newPropertyCount = Integer.parseInt(player4PropertyCount.getText()) + 1;
+            player4PropertyCount.setText(String.valueOf(newPropertyCount));
         }
     }
 
@@ -490,15 +630,17 @@ public class MainWindowController implements Initializable {
     public void performChanceCard(ChanceCard chanceCard, Player player, ArrayList<Player> players) {
         int id = chanceCard.getChanceID();
 
-        if(id == 1) { player.setCurrentPosition(39); } // Advance to boardwalk
+        if(id == 1) { player.setCurrentPosition(39); performSpaceLogic(dice.getLastRoll());} // Advance to boardwalk
         else if (id == 2) { player.setCurrentPosition(0); } // Advance to go (collect $200)
         else if (id == 3) { // Advance to Illinois Avenue. If you pass Go, collect $200
             if (player.getCurrentPosition() > 25) { player.addMoney(200); } // passes go
             player.setCurrentPosition(24);
+            performSpaceLogic(dice.getLastRoll());
         }
         else if (id == 4) { // Advance to St. Charles Place. If you pass Go, collect $200
             if (player.getCurrentPosition() > 12) { player.addMoney(200); } // passes go
             player.setCurrentPosition(11);
+            performSpaceLogic(dice.getLastRoll());
         }
         else if (id == 5) { // Advance to the nearest Railroad. If unowned, you may buy it from the Bank. If owned, pay owner twice the rental to which they are otherwise entitled
             if (player.getCurrentPosition() == 7) { player.setCurrentPosition(15); } // first chance spot
@@ -507,6 +649,7 @@ public class MainWindowController implements Initializable {
                 player.addMoney(200); // passes go
                 player.setCurrentPosition(5);
             }
+            performSpaceLogic(dice.getLastRoll());
         }
         else if (id == 6) { // Advance to the nearest Railroad. If unowned, you may buy it from the Bank. If owned, pay owner twice the rental to which they are otherwise entitled
             if (player.getCurrentPosition() == 7) { player.setCurrentPosition(15); } // first chance spot
@@ -515,6 +658,7 @@ public class MainWindowController implements Initializable {
                 player.addMoney(200); // passes go
                 player.setCurrentPosition(5);
             }
+            performSpaceLogic(dice.getLastRoll());
         }
         else if (id == 7) { // Advance token to the nearest Utility. If unowned, you may buy it from the Bank. If owned, throw dice and pay owner a total ten times amount thrown
             if (player.getCurrentPosition() == 7) { player.setCurrentPosition(12); }
@@ -523,6 +667,7 @@ public class MainWindowController implements Initializable {
                 player.addMoney(200); // passes go
                 player.setCurrentPosition(12);
             }
+            performSpaceLogic(dice.getLastRoll());
         }
         else if (id == 8) { player.addMoney(50); } // Bank pays you dividend of $50
         else if (id == 9) { player.addGetOutOfJailCard(); } // Get Out of Jail Free
@@ -536,6 +681,7 @@ public class MainWindowController implements Initializable {
         else if (id == 14) { // Take a trip to Reading Railroad. If you pass Go, collect $200
             player.addMoney(200); // player always passes go
             player.setCurrentPosition(5);
+            performSpaceLogic(dice.getLastRoll());
         }
         else if (id == 15) { // You have been elected Chairman of the Board. Pay each player $50
             for (Player p : players) {
@@ -578,5 +724,23 @@ public class MainWindowController implements Initializable {
         else if (id == 15) { player.addMoney(10); } // You have won second prize in a beauty contest. Collect $10
         else if (id == 16) { player.addMoney(100); } // You inherit $100
     }
+
+    public void viewProperties(ActionEvent event){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view-properties.fxml"));
+            Parent parent = fxmlLoader.load();
+            ViewPropertiesController controller = fxmlLoader.getController();
+            controller.setPlayer(currentPlayer);
+            Scene scene = new Scene(parent, 1340, 940);
+            Stage stage = new Stage();
+            stage.setTitle("Monopoly");
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

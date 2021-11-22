@@ -9,6 +9,7 @@ public class Dice {
     private int DEBUGdice1;
     private int DEBUGdice2;
     private Random random;
+    private int doublesCount;
 
     public Dice() {
         // constructor
@@ -16,6 +17,7 @@ public class Dice {
         dice2 = new int[]{1, 2, 3, 4, 5, 6};
         random = new Random();
         lastRoll = -1;
+        doublesCount = 0;
     }
 
     public boolean DiceRollTurn(Player player) {
@@ -28,6 +30,7 @@ public class Dice {
         DEBUGdice2 = dice2[y];
         lastRoll = sum;
         player.movePlayer(sum);
+        doublesCount++;
 
         return x == y;
     }
@@ -37,10 +40,7 @@ public class Dice {
     public int getDie2Roll() { return DEBUGdice2; }
     public boolean lastRollIsDouble() { return DEBUGdice2 == DEBUGdice1; }
 
-    public int DiceRollMultiplied(Player sender, Player receiver, int mult) {
-        // for utilities
-        int sum;
-        sum = 1 + random.nextInt(12);
-        return (sum * mult);
-    }
+    public int getDoublesCount(){ return this.doublesCount;}
+    public void setDoublesCount(int doublesCount){this.doublesCount = doublesCount;}
+
 }
