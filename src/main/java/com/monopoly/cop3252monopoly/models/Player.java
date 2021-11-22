@@ -12,6 +12,7 @@ public class Player {
     private int currentPosition;
     private int playerID;
     private int getOutOfJailCards;
+    private int numProperties;
 
 
     private boolean inJail;
@@ -23,6 +24,7 @@ public class Player {
         playerID = newID;
         getOutOfJailCards = 0;
         currentPosition = 0;
+        numProperties = 0;
         inJail = false;
     }
 
@@ -51,6 +53,11 @@ public class Player {
     public void setInJail(boolean inJail) {
         this.inJail = inJail;
     }
+
+    // Num Properties
+    public int getNumProperties() { return numProperties; }
+    public void setNumProperties(int num) { numProperties = num; }
+    public void addProperty() { numProperties++; } // increment when player buys a property
 
     // Balance
     public int getCurrentBalance() { return currentBalance; } // getter

@@ -906,9 +906,6 @@ public class MainWindowController implements Initializable {
             infoMessage(String.format("Player %d rolled a %d and is now on position %d", currentPlayer.getPlayerID(), dice.getLastRoll(), currentPlayer.getCurrentPosition()));
         }
 
-        // @Trevor The big if statement block that determined what would happen for what spot you landed on
-        // has been moved to inside this method, so it could be called multiple times
-        //    V V V V V
         performSpaceLogic(dice.getLastRoll());
 
         if (rollAgain){
@@ -956,8 +953,6 @@ public class MainWindowController implements Initializable {
             currentPlayer.loseMoney(100);
             updatePlayerBalance(currentPlayer);
         } else { // Player lands on a property, needs logic
-
-            // TODO: All property logic goes inside this else block
             Property propertyLandedOn = properties.get(currentPlayer.getCurrentPosition());
             if (!propertyLandedOn.isOwned()){
                 //Property isn't owned, you can buy it.
@@ -974,52 +969,50 @@ public class MainWindowController implements Initializable {
                     return;
                 }
             }
-            else{
+            else {
                 Player propertyOwner = players.get(propertyLandedOn.getOwner() - 1);
                 int rent = 0;
                 //Property is already owned, pay rent.
-                if (propertyLandedOn.isRailroad()){
-                    //Railroad logic
-                    int railroadsOwned = 0;
-                    for (int i = 5; i <= 35; i+=10){
-                        if (properties.get(i).getOwner() == propertyOwner.getPlayerID()){
-                            railroadsOwned++;
+                if (propertyOwner != currentPlayer) {
+                    if (propertyLandedOn.isRailroad()) {
+                        //Railroad logic
+                        int railroadsOwned = 0;
+                        for (int i = 5; i <= 35; i += 10) {
+                            if (properties.get(i).getOwner() == propertyOwner.getPlayerID()) {
+                                railroadsOwned++;
+                            }
                         }
-                    }
-                    rent = Property.propertyValues.get(currentPlayer.getCurrentPosition()).get(railroadsOwned);
-                    currentPlayer.loseMoney(rent);
-                    propertyOwner.addMoney(rent);
-                }
-                else if (propertyLandedOn.isUtility()){
-                    //Utility Logic
-                    int utilitiesOwned = 0;
-                    if (properties.get(12).getOwner() == propertyOwner.getPlayerID()){
-                        utilitiesOwned++;
-                    }
-                    if (properties.get(28).getOwner() == propertyOwner.getPlayerID()){
-                        utilitiesOwned++;
-                    }
-                    if (utilitiesOwned == 1){
-                        rent = 4*lastRoll;
+                        rent = Property.propertyValues.get(currentPlayer.getCurrentPosition()).get(railroadsOwned);
+                        currentPlayer.loseMoney(rent);
+                        propertyOwner.addMoney(rent);
+                    } else if (propertyLandedOn.isUtility()) {
+                        //Utility Logic
+                        int utilitiesOwned = 0;
+                        if (properties.get(12).getOwner() == propertyOwner.getPlayerID()) {
+                            utilitiesOwned++;
+                        }
+                        if (properties.get(28).getOwner() == propertyOwner.getPlayerID()) {
+                            utilitiesOwned++;
+                        }
+                        if (utilitiesOwned == 1) {
+                            rent = 4 * lastRoll;
+                            currentPlayer.loseMoney(rent);
+                            propertyOwner.addMoney(rent);
+                        } else {
+                            rent = 10 * lastRoll;
+                            currentPlayer.loseMoney(rent);
+                            propertyOwner.addMoney(rent);
+                        }
+                    } else {
+                        //Normal Property Logic
+                        rent = Property.propertyValues.get(currentPlayer.getCurrentPosition()).get(propertyLandedOn.getHouseCount());
                         currentPlayer.loseMoney(rent);
                         propertyOwner.addMoney(rent);
                     }
-                    else{
-                        rent = 10*lastRoll;
-                        currentPlayer.loseMoney(rent);
-                        propertyOwner.addMoney(rent);
-                    }
+                    infoMessage(String.format("Player %d paid Player %d $%d in rent", currentPlayer.getPlayerID(), propertyOwner.getPlayerID(), rent));
+                    updatePlayerBalance(propertyOwner);
                 }
-                else{
-                    //Normal Property Logic
-                    rent = Property.propertyValues.get(currentPlayer.getCurrentPosition()).get(propertyLandedOn.getHouseCount());
-                    currentPlayer.loseMoney(rent);
-                    propertyOwner.addMoney(rent);
-                }
-                infoMessage(String.format("Player %d paid Player %d $%d in rent", currentPlayer.getPlayerID(), propertyOwner.getPlayerID(), rent));
-                updatePlayerBalance(propertyOwner);
             }
-
             updatePlayerBalance(currentPlayer);
         }
     }
@@ -1036,6 +1029,7 @@ public class MainWindowController implements Initializable {
         propertyToBuy.setOwned(true);
         currentPlayer.loseMoney(propertyToBuy.getPropertyCost());
         updatePlayerBalance(currentPlayer);
+        currentPlayer.addProperty(); // property counter
         updatePropertiesOwned(currentPlayer);
 
         buyChoiceAvailable = false;
@@ -1120,20 +1114,16 @@ public class MainWindowController implements Initializable {
 
     public void updatePropertiesOwned(Player currentPlayer){
         if (currentPlayer.getPlayerID() == 1){
-            int newPropertyCount = Integer.parseInt(player1PropertyCount.getText()) + 1;
-            player1PropertyCount.setText(String.valueOf(newPropertyCount));
+            player1PropertyCount.setText(String.format("%d", currentPlayer.getNumProperties()));
         }
         else if (currentPlayer.getPlayerID() == 2){
-            int newPropertyCount = Integer.parseInt(player2PropertyCount.getText()) + 1;
-            player2PropertyCount.setText(String.valueOf(newPropertyCount));
+            player2PropertyCount.setText(String.format("%d", currentPlayer.getNumProperties()));
         }
         else if (currentPlayer.getPlayerID() == 3){
-            int newPropertyCount = Integer.parseInt(player3PropertyCount.getText()) + 1;
-            player3PropertyCount.setText(String.valueOf(newPropertyCount));
+            player3PropertyCount.setText(String.format("%d", currentPlayer.getNumProperties()));
         }
         else if (currentPlayer.getPlayerID() == 4){
-            int newPropertyCount = Integer.parseInt(player4PropertyCount.getText()) + 1;
-            player4PropertyCount.setText(String.valueOf(newPropertyCount));
+            player4PropertyCount.setText(String.format("%d", currentPlayer.getNumProperties()));
         }
     }
 
@@ -1141,7 +1131,7 @@ public class MainWindowController implements Initializable {
     public void updatePlayer(Player currentPlayer) {
         updatePlayerLocation(currentPlayer);
         updatePlayerBalance(currentPlayer);
-        // update properties
+        updatePropertiesOwned(currentPlayer);
     }
 
     public void setPlayerCount(int playerCount) {
@@ -1230,7 +1220,7 @@ public class MainWindowController implements Initializable {
         int id = chanceCard.getChanceID();
 
         if(id == 1) { player.setCurrentPosition(39); performSpaceLogic(dice.getLastRoll());} // Advance to boardwalk
-        else if (id == 2) { player.setCurrentPosition(0); } // Advance to go (collect $200)
+        else if (id == 2) { player.setCurrentPosition(0); player.addMoney(200);} // Advance to go (collect $200)
         else if (id == 3) { // Advance to Illinois Avenue. If you pass Go, collect $200
             if (player.getCurrentPosition() > 25) { player.addMoney(200); } // passes go
             player.setCurrentPosition(24);
@@ -1270,7 +1260,7 @@ public class MainWindowController implements Initializable {
         }
         else if (id == 8) { player.addMoney(50); } // Bank pays you dividend of $50
         else if (id == 9) { player.addGetOutOfJailCard(); } // Get Out of Jail Free
-        else if (id == 10) { player.movePlayer(-3); } // Go Back 3 Spaces
+        else if (id == 10) { player.movePlayer(-3); performSpaceLogic(dice.getLastRoll()); } // Go Back 3 Spaces
         else if (id == 11) { // Go to Jail. Go directly to Jail, do not pass Go, do not collect $200
             player.setCurrentPosition(40);
             player.setInJail(true);
@@ -1296,7 +1286,7 @@ public class MainWindowController implements Initializable {
     public void performCommunityCard(CommunityCard communityCard, Player player, ArrayList<Player> players) {
         int id = communityCard.getCommunityID();
 
-        if (id == 1) { player.setCurrentPosition(0); } // Advance to Go (Collect $200)
+        if (id == 1) { player.setCurrentPosition(0); player.addMoney(200); } // Advance to Go (Collect $200)
         else if (id == 2) { player.addMoney(200); } // Bank error in your favor. Collect $200
         else if (id == 3) { player.loseMoney(50); } // Doctor’s fee. Pay $50
         else if (id == 4) { player.addMoney(50); } // From sale of stock you get $50
