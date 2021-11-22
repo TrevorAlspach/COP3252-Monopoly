@@ -111,6 +111,226 @@ public class MainWindowController implements Initializable {
     @FXML
     private ImageView community;
     @FXML
+    private ImageView mediterranean_house1;
+    @FXML
+    private ImageView mediterranean_house2;
+    @FXML
+    private ImageView mediterranean_house3;
+    @FXML
+    private ImageView mediterranean_house4;
+    @FXML
+    private ImageView mediterranean_hotel;
+    @FXML
+    private ImageView baltic_house1;
+    @FXML
+    private ImageView baltic_house2;
+    @FXML
+    private ImageView baltic_house3;
+    @FXML
+    private ImageView baltic_house4;
+    @FXML
+    private ImageView baltic_hotel;
+    @FXML
+    private ImageView oriental_house1;
+    @FXML
+    private ImageView oriental_house2;
+    @FXML
+    private ImageView oriental_house3;
+    @FXML
+    private ImageView oriental_house4;
+    @FXML
+    private ImageView oriental_hotel;
+    @FXML
+    private ImageView vermont_house1;
+    @FXML
+    private ImageView vermont_house2;
+    @FXML
+    private ImageView vermont_house3;
+    @FXML
+    private ImageView vermont_house4;
+    @FXML
+    private ImageView vermont_hotel;
+    @FXML
+    private ImageView connecticut_house1;
+    @FXML
+    private ImageView connecticut_house2;
+    @FXML
+    private ImageView connecticut_house3;
+    @FXML
+    private ImageView connecticut_house4;
+    @FXML
+    private ImageView connecticut_hotel;
+    @FXML
+    private ImageView stcharles_house1;
+    @FXML
+    private ImageView stcharles_house2;
+    @FXML
+    private ImageView stcharles_house3;
+    @FXML
+    private ImageView stcharles_house4;
+    @FXML
+    private ImageView stcharles_hotel;
+    @FXML
+    private ImageView states_house1;
+    @FXML
+    private ImageView states_house2;
+    @FXML
+    private ImageView states_house3;
+    @FXML
+    private ImageView states_house4;
+    @FXML
+    private ImageView states_hotel;
+    @FXML
+    private ImageView virginia_house1;
+    @FXML
+    private ImageView virginia_house2;
+    @FXML
+    private ImageView virginia_house3;
+    @FXML
+    private ImageView virginia_house4;
+    @FXML
+    private ImageView virginia_hotel;
+    @FXML
+    private ImageView stjames_house1;
+    @FXML
+    private ImageView stjames_house2;
+    @FXML
+    private ImageView stjames_house3;
+    @FXML
+    private ImageView stjames_house4;
+    @FXML
+    private ImageView stjames_hotel;
+    @FXML
+    private ImageView tennessee_house1;
+    @FXML
+    private ImageView tennessee_house2;
+    @FXML
+    private ImageView tennessee_house3;
+    @FXML
+    private ImageView tennessee_house4;
+    @FXML
+    private ImageView tennessee_hotel;
+    @FXML
+    private ImageView newyork_house1;
+    @FXML
+    private ImageView newyork_house2;
+    @FXML
+    private ImageView newyork_house3;
+    @FXML
+    private ImageView newyork_house4;
+    @FXML
+    private ImageView newyork_hotel;
+    @FXML
+    private ImageView kentucky_house1;
+    @FXML
+    private ImageView kentucky_house2;
+    @FXML
+    private ImageView kentucky_house3;
+    @FXML
+    private ImageView kentucky_house4;
+    @FXML
+    private ImageView kentucky_hotel;
+    @FXML
+    private ImageView indiana_house1;
+    @FXML
+    private ImageView indiana_house2;
+    @FXML
+    private ImageView indiana_house3;
+    @FXML
+    private ImageView indiana_house4;
+    @FXML
+    private ImageView indiana_hotel;
+    @FXML
+    private ImageView illinois_house1;
+    @FXML
+    private ImageView illinois_house2;
+    @FXML
+    private ImageView illinois_house3;
+    @FXML
+    private ImageView illinois_house4;
+    @FXML
+    private ImageView illinois_hotel;
+    @FXML
+    private ImageView atlantic_house1;
+    @FXML
+    private ImageView atlantic_house2;
+    @FXML
+    private ImageView atlantic_house3;
+    @FXML
+    private ImageView atlantic_house4;
+    @FXML
+    private ImageView atlantic_hotel;
+    @FXML
+    private ImageView ventnor_house1;
+    @FXML
+    private ImageView ventnor_house2;
+    @FXML
+    private ImageView ventnor_house3;
+    @FXML
+    private ImageView ventnor_house4;
+    @FXML
+    private ImageView ventnor_hotel;
+    @FXML
+    private ImageView marvin_house1;
+    @FXML
+    private ImageView marvin_house2;
+    @FXML
+    private ImageView marvin_house3;
+    @FXML
+    private ImageView marvin_house4;
+    @FXML
+    private ImageView marvin_hotel;
+    @FXML
+    private ImageView pacific_house1;
+    @FXML
+    private ImageView pacific_house2;
+    @FXML
+    private ImageView pacific_house3;
+    @FXML
+    private ImageView pacific_house4;
+    @FXML
+    private ImageView pacific_hotel;
+    @FXML
+    private ImageView northcarolina_house1;
+    @FXML
+    private ImageView northcarolina_house2;
+    @FXML
+    private ImageView northcarolina_house3;
+    @FXML
+    private ImageView northcarolina_house4;
+    @FXML
+    private ImageView northcarolina_hotel;
+    @FXML
+    private ImageView pennsylvania_house1;
+    @FXML
+    private ImageView pennsylvania_house2;
+    @FXML
+    private ImageView pennsylvania_house3;
+    @FXML
+    private ImageView pennsylvania_house4;
+    @FXML
+    private ImageView pennsylvania_hotel;
+    @FXML
+    private ImageView park_house1;
+    @FXML
+    private ImageView park_house2;
+    @FXML
+    private ImageView park_house3;
+    @FXML
+    private ImageView park_house4;
+    @FXML
+    private ImageView park_hotel;
+    @FXML
+    private ImageView boardwalk_house1;
+    @FXML
+    private ImageView boardwalk_house2;
+    @FXML
+    private ImageView boardwalk_house3;
+    @FXML
+    private ImageView boardwalk_house4;
+    @FXML
+    private ImageView boardwalk_hotel;
+    @FXML
     private Label playerLabel;
     @FXML
     private ListView<String> listView;
@@ -146,6 +366,17 @@ public class MainWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Platform.runLater(this::initializePieces);
+        Platform.runLater(this::initializeBoard);
+        Platform.runLater(this::initializeDice);
+        Platform.runLater(this::initializeGame);
+
+        gameMessages = FXCollections.observableArrayList();
+        listView.setItems(gameMessages);
+    }
+
+    private void initializeBoard(){
+        // CARD DECKS
         chance.setX(515);
         chance.setY(500);
         chance.setRotate(-45);
@@ -153,12 +384,380 @@ public class MainWindowController implements Initializable {
         community.setY(180);
         community.setRotate(135);
 
-        Platform.runLater(this::initializePieces);
-        Platform.runLater(this::initializeDice);
-        Platform.runLater(this::initializeGame);
+        // HOUSES
+        mediterranean_house1.setX(655);
+        mediterranean_house1.setY(675);
+        mediterranean_house2.setX(667.5);
+        mediterranean_house2.setY(675);
+        mediterranean_house3.setX(680);
+        mediterranean_house3.setY(675);
+        mediterranean_house4.setX(692.5);
+        mediterranean_house4.setY(675);
+        mediterranean_hotel.setX(675);
+        mediterranean_hotel.setY(670);
 
-        gameMessages = FXCollections.observableArrayList();
-        listView.setItems(gameMessages);
+        mediterranean_house1.setVisible(false);
+        mediterranean_house2.setVisible(false);
+        mediterranean_house3.setVisible(false);
+        mediterranean_house4.setVisible(false);
+        mediterranean_hotel.setVisible(false);
+
+        baltic_house1.setX(535);
+        baltic_house1.setY(675);
+        baltic_house2.setX(547.5);
+        baltic_house2.setY(675);
+        baltic_house3.setX(560);
+        baltic_house3.setY(675);
+        baltic_house4.setX(572.5);
+        baltic_house4.setY(675);
+        baltic_hotel.setX(555);
+        baltic_hotel.setY(670);
+
+        baltic_house1.setVisible(false);
+        baltic_house2.setVisible(false);
+        baltic_house3.setVisible(false);
+        baltic_house4.setVisible(false);
+        baltic_hotel.setVisible(false);
+
+        oriental_house1.setX(347);
+        oriental_house1.setY(675);
+        oriental_house2.setX(359.5);
+        oriental_house2.setY(675);
+        oriental_house3.setX(372);
+        oriental_house3.setY(675);
+        oriental_house4.setX(384.5);
+        oriental_house4.setY(675);
+        oriental_hotel.setX(367);
+        oriental_hotel.setY(670);
+
+        oriental_house1.setVisible(false);
+        oriental_house2.setVisible(false);
+        oriental_house3.setVisible(false);
+        oriental_house4.setVisible(false);
+        oriental_hotel.setVisible(false);
+
+        vermont_house1.setX(223);
+        vermont_house1.setY(675);
+        vermont_house2.setX(235.5);
+        vermont_house2.setY(675);
+        vermont_house3.setX(248);
+        vermont_house3.setY(675);
+        vermont_house4.setX(260.5);
+        vermont_house4.setY(675);
+        vermont_hotel.setX(243);
+        vermont_hotel.setY(670);
+
+        vermont_house1.setVisible(false);
+        vermont_house2.setVisible(false);
+        vermont_house3.setVisible(false);
+        vermont_house4.setVisible(false);
+        vermont_hotel.setVisible(false);
+
+        connecticut_house1.setX(160);
+        connecticut_house1.setY(675);
+        connecticut_house2.setX(172.5);
+        connecticut_house2.setY(675);
+        connecticut_house3.setX(185);
+        connecticut_house3.setY(675);
+        connecticut_house4.setX(197.5);
+        connecticut_house4.setY(675);
+        connecticut_hotel.setX(180);
+        connecticut_hotel.setY(670);
+
+        connecticut_house1.setVisible(false);
+        connecticut_house2.setVisible(false);
+        connecticut_house3.setVisible(false);
+        connecticut_house4.setVisible(false);
+        connecticut_hotel.setVisible(false);
+
+        stcharles_house1.setX(140);
+        stcharles_house1.setY(610);
+        stcharles_house2.setX(140);
+        stcharles_house2.setY(622.5);
+        stcharles_house3.setX(140);
+        stcharles_house3.setY(635);
+        stcharles_house4.setX(140);
+        stcharles_house4.setY(647.5);
+        stcharles_hotel.setX(135);
+        stcharles_hotel.setY(630);
+
+        stcharles_house1.setVisible(false);
+        stcharles_house2.setVisible(false);
+        stcharles_house3.setVisible(false);
+        stcharles_house4.setVisible(false);
+        stcharles_hotel.setVisible(false);
+
+        states_house1.setX(140);
+        states_house1.setY(485);
+        states_house2.setX(140);
+        states_house2.setY(497.5);
+        states_house3.setX(140);
+        states_house3.setY(510);
+        states_house4.setX(140);
+        states_house4.setY(522.5);
+        states_hotel.setX(135);
+        states_hotel.setY(505);
+
+        states_house1.setVisible(false);
+        states_house2.setVisible(false);
+        states_house3.setVisible(false);
+        states_house4.setVisible(false);
+        states_hotel.setVisible(false);
+
+        virginia_house1.setX(140);
+        virginia_house1.setY(425);
+        virginia_house2.setX(140);
+        virginia_house2.setY(437.5);
+        virginia_house3.setX(140);
+        virginia_house3.setY(450);
+        virginia_house4.setX(140);
+        virginia_house4.setY(462.5);
+        virginia_hotel.setX(135);
+        virginia_hotel.setY(445);
+
+        virginia_house1.setVisible(false);
+        virginia_house2.setVisible(false);
+        virginia_house3.setVisible(false);
+        virginia_house4.setVisible(false);
+        virginia_hotel.setVisible(false);
+
+        stjames_house1.setX(140);
+        stjames_house1.setY(297);
+        stjames_house2.setX(140);
+        stjames_house2.setY(309.5);
+        stjames_house3.setX(140);
+        stjames_house3.setY(322);
+        stjames_house4.setX(140);
+        stjames_house4.setY(334.5);
+        stjames_hotel.setX(135);
+        stjames_hotel.setY(317);
+
+        stjames_house1.setVisible(false);
+        stjames_house2.setVisible(false);
+        stjames_house3.setVisible(false);
+        stjames_house4.setVisible(false);
+        stjames_hotel.setVisible(false);
+
+        tennessee_house1.setX(140);
+        tennessee_house1.setY(172);
+        tennessee_house2.setX(140);
+        tennessee_house2.setY(184.5);
+        tennessee_house3.setX(140);
+        tennessee_house3.setY(197);
+        tennessee_house4.setX(140);
+        tennessee_house4.setY(209.5);
+        tennessee_hotel.setX(135);
+        tennessee_hotel.setY(192);
+
+        tennessee_house1.setVisible(false);
+        tennessee_house2.setVisible(false);
+        tennessee_house3.setVisible(false);
+        tennessee_house4.setVisible(false);
+        tennessee_hotel.setVisible(false);
+
+        newyork_house1.setX(140);
+        newyork_house1.setY(110);
+        newyork_house2.setX(140);
+        newyork_house2.setY(122.5);
+        newyork_house3.setX(140);
+        newyork_house3.setY(135);
+        newyork_house4.setX(140);
+        newyork_house4.setY(147.5);
+        newyork_hotel.setX(135);
+        newyork_hotel.setY(130);
+
+        newyork_house1.setVisible(false);
+        newyork_house2.setVisible(false);
+        newyork_house3.setVisible(false);
+        newyork_house4.setVisible(false);
+        newyork_hotel.setVisible(false);
+
+        kentucky_house1.setX(160);
+        kentucky_house1.setY(88);
+        kentucky_house2.setX(172.5);
+        kentucky_house2.setY(88);
+        kentucky_house3.setX(185);
+        kentucky_house3.setY(88);
+        kentucky_house4.setX(197.5);
+        kentucky_house4.setY(88);
+        kentucky_hotel.setX(180);
+        kentucky_hotel.setY(83);
+
+        kentucky_house1.setVisible(false);
+        kentucky_house2.setVisible(false);
+        kentucky_house3.setVisible(false);
+        kentucky_house4.setVisible(false);
+        kentucky_hotel.setVisible(false);
+
+        indiana_house1.setX(285);
+        indiana_house1.setY(88);
+        indiana_house2.setX(297.5);
+        indiana_house2.setY(88);
+        indiana_house3.setX(310);
+        indiana_house3.setY(88);
+        indiana_house4.setX(322.5);
+        indiana_house4.setY(88);
+        indiana_hotel.setX(305);
+        indiana_hotel.setY(83);
+
+        indiana_house1.setVisible(false);
+        indiana_house2.setVisible(false);
+        indiana_house3.setVisible(false);
+        indiana_house4.setVisible(false);
+        indiana_hotel.setVisible(false);
+
+        illinois_house1.setX(347);
+        illinois_house1.setY(88);
+        illinois_house2.setX(359.5);
+        illinois_house2.setY(88);
+        illinois_house3.setX(372);
+        illinois_house3.setY(88);
+        illinois_house4.setX(384.5);
+        illinois_house4.setY(88);
+        illinois_hotel.setX(367);
+        illinois_hotel.setY(83);
+
+        illinois_house1.setVisible(false);
+        illinois_house2.setVisible(false);
+        illinois_house3.setVisible(false);
+        illinois_house4.setVisible(false);
+        illinois_hotel.setVisible(false);
+
+        atlantic_house1.setX(472);
+        atlantic_house1.setY(88);
+        atlantic_house2.setX(484.5);
+        atlantic_house2.setY(88);
+        atlantic_house3.setX(497);
+        atlantic_house3.setY(88);
+        atlantic_house4.setX(509.5);
+        atlantic_house4.setY(88);
+        atlantic_hotel.setX(492);
+        atlantic_hotel.setY(83);
+
+        atlantic_house1.setVisible(false);
+        atlantic_house2.setVisible(false);
+        atlantic_house3.setVisible(false);
+        atlantic_house4.setVisible(false);
+        atlantic_hotel.setVisible(false);
+
+        ventnor_house1.setX(535);
+        ventnor_house1.setY(88);
+        ventnor_house2.setX(547.5);
+        ventnor_house2.setY(88);
+        ventnor_house3.setX(560);
+        ventnor_house3.setY(88);
+        ventnor_house4.setX(572.5);
+        ventnor_house4.setY(88);
+        ventnor_hotel.setX(555);
+        ventnor_hotel.setY(83);
+
+        ventnor_house1.setVisible(false);
+        ventnor_house2.setVisible(false);
+        ventnor_house3.setVisible(false);
+        ventnor_house4.setVisible(false);
+        ventnor_hotel.setVisible(false);
+
+        marvin_house1.setX(660);
+        marvin_house1.setY(88);
+        marvin_house2.setX(672.5);
+        marvin_house2.setY(88);
+        marvin_house3.setX(685);
+        marvin_house3.setY(88);
+        marvin_house4.setX(697.5);
+        marvin_house4.setY(88);
+        marvin_hotel.setX(680);
+        marvin_hotel.setY(83);
+
+        marvin_house1.setVisible(false);
+        marvin_house2.setVisible(false);
+        marvin_house3.setVisible(false);
+        marvin_house4.setVisible(false);
+        marvin_hotel.setVisible(false);
+
+        pacific_house1.setX(725);
+        pacific_house1.setY(110);
+        pacific_house2.setX(725);
+        pacific_house2.setY(122.5);
+        pacific_house3.setX(725);
+        pacific_house3.setY(135);
+        pacific_house4.setX(725);
+        pacific_house4.setY(147.5);
+        pacific_hotel.setX(720);
+        pacific_hotel.setY(130);
+
+        pacific_house1.setVisible(false);
+        pacific_house2.setVisible(false);
+        pacific_house3.setVisible(false);
+        pacific_house4.setVisible(false);
+        pacific_hotel.setVisible(false);
+
+        northcarolina_house1.setX(725);
+        northcarolina_house1.setY(172);
+        northcarolina_house2.setX(725);
+        northcarolina_house2.setY(184.5);
+        northcarolina_house3.setX(725);
+        northcarolina_house3.setY(197);
+        northcarolina_house4.setX(725);
+        northcarolina_house4.setY(209.5);
+        northcarolina_hotel.setX(720);
+        northcarolina_hotel.setY(192);
+
+        northcarolina_house1.setVisible(false);
+        northcarolina_house2.setVisible(false);
+        northcarolina_house3.setVisible(false);
+        northcarolina_house4.setVisible(false);
+        northcarolina_hotel.setVisible(false);
+
+        pennsylvania_house1.setX(725);
+        pennsylvania_house1.setY(297);
+        pennsylvania_house2.setX(725);
+        pennsylvania_house2.setY(309.5);
+        pennsylvania_house3.setX(725);
+        pennsylvania_house3.setY(322);
+        pennsylvania_house4.setX(725);
+        pennsylvania_house4.setY(334.5);
+        pennsylvania_hotel.setX(720);
+        pennsylvania_hotel.setY(317);
+
+        pennsylvania_house1.setVisible(false);
+        pennsylvania_house2.setVisible(false);
+        pennsylvania_house3.setVisible(false);
+        pennsylvania_house4.setVisible(false);
+        pennsylvania_hotel.setVisible(false);
+
+        park_house1.setX(725);
+        park_house1.setY(485);
+        park_house2.setX(725);
+        park_house2.setY(497.5);
+        park_house3.setX(725);
+        park_house3.setY(510);
+        park_house4.setX(725);
+        park_house4.setY(522.5);
+        park_hotel.setX(720);
+        park_hotel.setY(505);
+
+        park_house1.setVisible(false);
+        park_house2.setVisible(false);
+        park_house3.setVisible(false);
+        park_house4.setVisible(false);
+        park_hotel.setVisible(false);
+
+        boardwalk_house1.setX(725);
+        boardwalk_house1.setY(610);
+        boardwalk_house2.setX(725);
+        boardwalk_house2.setY(622.5);
+        boardwalk_house3.setX(725);
+        boardwalk_house3.setY(635);
+        boardwalk_house4.setX(725);
+        boardwalk_house4.setY(647.5);
+        boardwalk_hotel.setX(720);
+        boardwalk_hotel.setY(630);
+
+        boardwalk_house1.setVisible(false);
+        boardwalk_house2.setVisible(false);
+        boardwalk_house3.setVisible(false);
+        boardwalk_house4.setVisible(false);
+        boardwalk_hotel.setVisible(false);
     }
 
     private void initializeGame(){
