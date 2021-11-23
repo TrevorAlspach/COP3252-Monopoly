@@ -1181,6 +1181,9 @@ public class MainWindowController implements Initializable {
             piece3.setVisible(false);
             piece4.setVisible(false);
         }
+        if(playerCount == 3) {
+            piece4.setVisible(false);
+        }
     }
 
     private void initializeDice()
