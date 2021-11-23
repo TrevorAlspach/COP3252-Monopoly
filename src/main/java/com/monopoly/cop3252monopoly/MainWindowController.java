@@ -217,13 +217,6 @@ public class MainWindowController implements Initializable {
         }*/
 
         boolean rollAgain = dice.DiceRollTurn(currentPlayer);
-        if (dice.getDoublesCount() == 3){
-            dice.setDoublesCount(0);
-            currentPlayer.setCurrentPosition(40);
-            currentPlayer.setInJail(true);
-            infoMessage(String.format("Player %d rolled 3 doubles in a row and is now in jail", currentPlayer.getPlayerID()));
-            return;
-        }
 
         switch (dice.getDie1Roll()) {
             case 1:
@@ -302,12 +295,30 @@ public class MainWindowController implements Initializable {
                 break;
         }
 
+        // moved if block so dice show up on board if player went to jail
+        if (dice.getDoublesCount() == 3){
+            dice.setDoublesCount(0);
+            currentPlayer.setCurrentPosition(40);
+            currentPlayer.setInJail(true);
+            infoMessage(String.format("Player %d rolled 3 doubles in a row and is now in jail", currentPlayer.getPlayerID()));
+            updatePlayer(currentPlayer);
+            nextTurnAvailable = true;
+            canRollDice = false;
+            return;
+        }
+
         updatePlayer(currentPlayer);
         if (!currentPlayer.isInJail()) {
-            infoMessage(String.format("Player %d rolled a %d and is now on position %d", currentPlayer.getPlayerID(), dice.getLastRoll(), currentPlayer.getCurrentPosition()));
+            infoMessage(String.format("Player %d rolled a %d and is now on %s", currentPlayer.getPlayerID(), dice.getLastRoll(), positionToString(currentPlayer.getCurrentPosition())));
         }
 
         performSpaceLogic(dice.getLastRoll());
+
+        if(currentPlayer.isKickedFromGame()) { // player has been successfully removed from the game
+            nextTurnAvailable = true;
+            canRollDice = false;
+            return;
+        }
 
         if (rollAgain){
             infoMessage(String.format("Player %d rolled doubles, roll again!", currentPlayer.getPlayerID()));
@@ -340,24 +351,26 @@ public class MainWindowController implements Initializable {
             updatePlayerBalance(currentPlayer);
         } else if (currentPlayer.getCurrentPosition() == 4) { // Landed on Income Tax
             currentPlayer.loseMoney(200);
+            infoMessage(String.format("Player %d paid a $200 Income Tax", currentPlayer.getPlayerID()));
             updatePlayerBalance(currentPlayer);
         } else if (currentPlayer.getCurrentPosition() == 10) { // Just visiting
             infoMessage("Say hi to the people in jail >:)");
         } else if (currentPlayer.getCurrentPosition() == 20) { // Free Parking
             infoMessage("Enjoy your free parking");
         } else if (currentPlayer.getCurrentPosition() == 30) { // Go To Jail
-            infoMessage(String.format("Player %d committed tax fraud and got caught. Go directly to jail!", currentPlayer.getPlayerID()));
+            infoMessage(String.format("Player %d has been sent to Jail!", currentPlayer.getPlayerID()));
             currentPlayer.setCurrentPosition(40);
             currentPlayer.setInJail(true);
             updatePlayerLocation(currentPlayer);
         } else if (currentPlayer.getCurrentPosition() == 38) { // Luxury Tax
-            currentPlayer.loseMoney(100);
+            currentPlayer.loseMoney(75);
+            infoMessage(String.format("Player %d paid a $75 Luxury Tax", currentPlayer.getPlayerID()));
             updatePlayerBalance(currentPlayer);
-        } else { // Player lands on a property, needs logic
+        } else { // Player lands on a property
             Property propertyLandedOn = properties.get(currentPlayer.getCurrentPosition());
             if (!propertyLandedOn.isOwned()){
                 //Property isn't owned, you can buy it.
-                if (propertyLandedOn.getPropertyCost() < currentPlayer.getCurrentBalance()) {
+                if (propertyLandedOn.getPropertyCost() <= currentPlayer.getCurrentBalance()) {
                     //You can afford the property
                     infoMessage(String.format("%s is unowned, Player %d would you like to buy it for $%d?",
                             propertyLandedOn.getPropertyTitle(), currentPlayer.getPlayerID(), propertyLandedOn.getPropertyCost()));
@@ -416,6 +429,11 @@ public class MainWindowController implements Initializable {
             }
             updatePlayerBalance(currentPlayer);
         }
+        // Player went bankrupt when paying rent or something, kick 'em outta here!
+        if (currentPlayer.isBankrupt() && !currentPlayer.isKickedFromGame()) {
+            kickPlayerOut(currentPlayer);
+            infoMessage(String.format("Player %d went bankrupt and has been eliminated from the game", currentPlayer.getPlayerID()));
+        }
     }
 
     public void onBuyProperty(ActionEvent event){
@@ -451,12 +469,11 @@ public class MainWindowController implements Initializable {
         if (!nextTurnAvailable || buyChoiceAvailable)
             return;
 
-        if (currentPlayer.getPlayerID() == playerCount){
-            currentPlayer = players.get(0);
-        }
-        else{
-            currentPlayer = players.get(currentPlayer.getPlayerID());
-        }
+        // This will get the next player that is not kicked from game
+        do {
+            currentPlayer = players.get(currentPlayer.getPlayerID() % playerCount); // will loop as intended
+        } while (currentPlayer.isKickedFromGame());
+
         playerLabel.setText(String.format("Player %d Turn", currentPlayer.getPlayerID()));
 
 
@@ -473,6 +490,12 @@ public class MainWindowController implements Initializable {
             currentPlayer.setInJail(false);
             updatePlayer(currentPlayer);
         }
+
+        if(currentPlayer.isBankrupt() && !currentPlayer.isKickedFromGame()) {
+            kickPlayerOut(currentPlayer);
+            infoMessage(String.format("Player %d went bankrupt and has been eliminated from the game", currentPlayer.getPlayerID()));
+        }
+
         canRollDice = true;
         nextTurnAvailable = false;
     }
@@ -607,16 +630,6 @@ public class MainWindowController implements Initializable {
         listView.scrollTo(gameMessages.size()-1);
     }
 
-    // Debug message to show various data in the text box. Strictly for testing only, should not be called in final product
-    public void debugMessage() {
-        infoMessage(String.format("%d = %d + %d", dice.getLastRoll(), dice.getDie1Roll(), dice.getDie2Roll()));
-        if (dice.lastRollIsDouble()) {
-            infoMessage("Double!");
-        } else {
-            infoMessage("Not Double!");
-        }
-    }
-
     public void performChanceCard(ChanceCard chanceCard, Player player, ArrayList<Player> players) {
         int id = chanceCard.getChanceID();
 
@@ -679,9 +692,15 @@ public class MainWindowController implements Initializable {
                     player.loseMoney(50);
                     p.addMoney(50);
                 }
+                updatePlayerBalance(p);
             }
         }
         else if (id == 16) { player.addMoney(150); } // Your building loan matures. Collect $150
+
+        if (player.isBankrupt() && !currentPlayer.isKickedFromGame()) {
+            kickPlayerOut(player);
+            infoMessage(String.format("Player %d went bankrupt and has been eliminated from the game", player.getPlayerID()));
+        }
     }
 
     public void performCommunityCard(CommunityCard communityCard, Player player, ArrayList<Player> players) {
@@ -704,6 +723,7 @@ public class MainWindowController implements Initializable {
                     p.loseMoney(10);
                     player.addMoney(10);
                 }
+                updatePlayerBalance(p);
             }
         }
         else if (id == 10) { player.addMoney(100); } // Life insurance matures. Collect $100
@@ -713,6 +733,11 @@ public class MainWindowController implements Initializable {
         else if (id == 14) {  } // You are assessed for street repair. $40 per house. $115 per hotel
         else if (id == 15) { player.addMoney(10); } // You have won second prize in a beauty contest. Collect $10
         else if (id == 16) { player.addMoney(100); } // You inherit $100
+
+        if (player.isBankrupt() && !currentPlayer.isKickedFromGame()) {
+            kickPlayerOut(player);
+            infoMessage(String.format("Player %d went bankrupt and has been eliminated from the game", player.getPlayerID()));
+        }
     }
 
     public void viewProperties(ActionEvent event){
@@ -732,5 +757,71 @@ public class MainWindowController implements Initializable {
         }
     }
 
+    public void kickPlayerOut(Player player) {
+        if (player.getPlayerID() == 1) { piece1.setVisible(false); }
+        else if (player.getPlayerID() == 2) { piece2.setVisible(false); }
+        else if (player.getPlayerID() == 3) { piece3.setVisible(false); }
+        else if (player.getPlayerID() == 4) { piece4.setVisible(false); }
+
+        for (Map.Entry<Integer, Property> entry : properties.entrySet()) {
+            // entry.getValue() is a Property
+            if (entry.getValue().getOwner() == player.getPlayerID()) {
+                entry.getValue().setOwned(false);
+                entry.getValue().setOwner(0);
+                // todo: set numHouses and numHotels back to 0 for each property
+            }
+        }
+
+        dice.setDoublesCount(0);
+        updatePlayer(player);
+        player.setKickedFromGame(true);
+    }
+
+    public String positionToString(int pos) {
+        String spaceName = "";
+        if (pos == 0) { spaceName = "Go"; }
+        if (pos == 1) { spaceName = "Mediterranean Avenue"; }
+        if (pos == 2) { spaceName = "Community Chest"; }
+        if (pos == 3) { spaceName = "Baltic Avenue"; }
+        if (pos == 4) { spaceName = "Income Tax"; }
+        if (pos == 5) { spaceName = "Reading Railroad"; }
+        if (pos == 6) { spaceName = "Oriental Avenue"; }
+        if (pos == 7) { spaceName = "Chance"; }
+        if (pos == 8) { spaceName = "Vermont Avenue"; }
+        if (pos == 9) { spaceName = "Connecticut Avenue"; }
+        if (pos == 10) { spaceName = "Just Visiting"; }
+        if (pos == 11) { spaceName = "St. Charles Place"; }
+        if (pos == 12) { spaceName = "Electric Company"; }
+        if (pos == 13) { spaceName = "States Avenue"; }
+        if (pos == 14) { spaceName = "Virginia Avenue"; }
+        if (pos == 15) { spaceName = "Pennsylvania Railroad"; }
+        if (pos == 16) { spaceName = "St. James Place"; }
+        if (pos == 17) { spaceName = "Community Chest"; }
+        if (pos == 18) { spaceName = "Tennessee Avenue"; }
+        if (pos == 19) { spaceName = "New York Avenue"; }
+        if (pos == 20) { spaceName = "Free Parking"; }
+        if (pos == 21) { spaceName = "Kentucky Avenue"; }
+        if (pos == 22) { spaceName = "Chance"; }
+        if (pos == 23) { spaceName = "Indiana Avenue"; }
+        if (pos == 24) { spaceName = "Illinois Avenue"; }
+        if (pos == 25) { spaceName = "B. & O. Railroad"; }
+        if (pos == 26) { spaceName = "Atlantic Avenue"; }
+        if (pos == 27) { spaceName = "Ventnor Avenue"; }
+        if (pos == 28) { spaceName = "Water Works"; }
+        if (pos == 29) { spaceName = "Marvin Gardens"; }
+        if (pos == 30) { spaceName = "Go To Jail"; }
+        if (pos == 31) { spaceName = "Pacific Avenue"; }
+        if (pos == 32) { spaceName = "North Carolina Avenue"; }
+        if (pos == 33) { spaceName = "Community Chest"; }
+        if (pos == 34) { spaceName = "Pennsylvania Avenue"; }
+        if (pos == 35) { spaceName = "Short Line Railroad"; }
+        if (pos == 36) { spaceName = "Chance"; }
+        if (pos == 37) { spaceName = "Park Place"; }
+        if (pos == 38) { spaceName = "Luxury Tax"; }
+        if (pos == 39) { spaceName = "Boardwalk"; }
+        if (pos == 40) { spaceName = "Jail"; }
+
+        return spaceName;
+    }
 
 }

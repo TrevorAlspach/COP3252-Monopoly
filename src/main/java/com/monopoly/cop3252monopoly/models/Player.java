@@ -13,6 +13,8 @@ public class Player {
     private int playerID;
     private int getOutOfJailCards;
     private int numProperties;
+    private boolean bankrupt;
+    private boolean kickedFromGame;
 
 
     private boolean inJail;
@@ -26,6 +28,8 @@ public class Player {
         currentPosition = 0;
         numProperties = 0;
         inJail = false;
+        bankrupt = false;
+        kickedFromGame = false;
     }
 
     // draw Chance card
@@ -62,7 +66,14 @@ public class Player {
     // Balance
     public int getCurrentBalance() { return currentBalance; } // getter
     public void setCurrentBalance(int money) { currentBalance = money; } // setter
-    public void loseMoney(int money) { currentBalance -= money; } // player loses money
+    public void loseMoney(int money) { // player loses money
+        if (currentBalance >= money) { currentBalance -= money; }
+        else {
+            bankrupt = true;
+            currentBalance = 0;
+            numProperties = 0;
+        }
+    }
     public void addMoney(int money) { currentBalance += money; } // player earns money
 
     // Position
@@ -82,5 +93,9 @@ public class Player {
     public void addGetOutOfJailCard() { getOutOfJailCards++; } // player received get-out-of-jail card
     public void useGetOutOfJailCard() { getOutOfJailCards--; } // player uses get-out-of-jail card
 
+    // Kicked out of game
+    public boolean isBankrupt() { return bankrupt; } // getter, dont need setter cause thats handled by loseMoney()
+    public boolean isKickedFromGame() { return kickedFromGame; }
+    public void setKickedFromGame(boolean kickStatus) { kickedFromGame = kickStatus; }
 
 }
