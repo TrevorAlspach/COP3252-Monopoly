@@ -100,6 +100,336 @@
             <ImageView fx:id="community" fitHeight="100" fitWidth="150">
                 <Image url="/com/monopoly/cop3252monopoly/images/communitychest.png"/>
             </ImageView>
+            <ImageView fx:id="mediterranean_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="mediterranean_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="mediterranean_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="mediterranean_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="mediterranean_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="baltic_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="baltic_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="baltic_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="baltic_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="baltic_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="oriental_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="oriental_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="oriental_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="oriental_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="oriental_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="vermont_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="vermont_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="vermont_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="vermont_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="vermont_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="connecticut_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="connecticut_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="connecticut_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="connecticut_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="connecticut_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="stcharles_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="stcharles_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="stcharles_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="stcharles_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="stcharles_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="states_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="states_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="states_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="states_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="states_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="virginia_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="virginia_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="virginia_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="virginia_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="virginia_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="stjames_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="stjames_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="stjames_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="stjames_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="stjames_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="tennessee_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="tennessee_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="tennessee_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="tennessee_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="tennessee_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="newyork_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="newyork_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="newyork_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="newyork_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="newyork_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="kentucky_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="kentucky_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="kentucky_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="kentucky_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="kentucky_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="indiana_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="indiana_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="indiana_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="indiana_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="indiana_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="illinois_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="illinois_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="illinois_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="illinois_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="illinois_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="atlantic_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="atlantic_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="atlantic_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="atlantic_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="atlantic_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="ventnor_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="ventnor_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="ventnor_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="ventnor_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="ventnor_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="marvin_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="marvin_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="marvin_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="marvin_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="marvin_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="pacific_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="pacific_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="pacific_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="pacific_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="pacific_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="northcarolina_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="northcarolina_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="northcarolina_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="northcarolina_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="northcarolina_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="pennsylvania_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="pennsylvania_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="pennsylvania_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="pennsylvania_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="pennsylvania_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="park_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="park_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="park_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="park_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="park_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
+            <ImageView fx:id="boardwalk_house1" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="boardwalk_house2" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="boardwalk_house3" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="boardwalk_house4" fitHeight="12" fitWidth="12">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_house.png"/>
+            </ImageView>
+            <ImageView fx:id="boardwalk_hotel" fitHeight="20" fitWidth="20">
+                <Image url="/com/monopoly/cop3252monopoly/images/monopoly_hotel.png"/>
+            </ImageView>
         </Pane>
         </StackPane>
       <Line endX="107.99984741210938" endY="-1.9142136573791504" startX="107.99984741210938" startY="781.378662109375" />
