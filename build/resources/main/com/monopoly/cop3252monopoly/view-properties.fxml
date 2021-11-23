@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="920.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.ViewPropertiesController">
+   <padding>
+      <Insets top="5.0" />
+   </padding>
+   <HBox prefHeight="450.0" prefWidth="600.0">
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+      <padding>
+         <Insets bottom="15.0" left="15.0" right="15.0" />
+      </padding>
+      <VBox spacing="-220">
+         <ImageView fitHeight="400.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" fx:id="MediterraneanAvenue" visible="false">
+            <Image url="/com/monopoly/cop3252monopoly/images/mediterranean_ave.png"/>
+         </ImageView>
+         <ImageView fitHeight="400.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" fx:id="BalticAvenue" visible="false">
+            <Image url="/com/monopoly/cop3252monopoly/images/baltic_ave.png"/>
+         </ImageView>
+      </VBox>
+      <VBox spacing="-220">
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="25.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="OrientalAvenue" visible="false" onMouseClicked="#selectOrientalAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/oriental_ave.png"/>
+         </ImageView>
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="25.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="VermontAvenue" visible="false" onMouseClicked="#selectVermontAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/vermont_ave.png"/>
+         </ImageView>
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="25.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="ConnecticutAvenue" visible="false" onMouseClicked="#selectConnecticutAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/connecticut_ave.png"/>
+         </ImageView>
+      </VBox>
+      <VBox spacing="-220">
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="StCharlesPlace" visible="false" onMouseClicked="#selectConnecticutAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/st_charles_place.png"/>
+         </ImageView>
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="StatesAvenue" visible="false" onMouseClicked="#selectStatesAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/states_ave.png"/>
+         </ImageView>
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="VirginiaAvenue" visible="false" onMouseClicked="#selectVirginiaAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/virginia_ave.png"/>
+         </ImageView>
+      </VBox>
+      <VBox spacing="-220">
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="405.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="StJamesPlace" visible="false" onMouseClicked="#selectConnecticutAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/st_james_place.png"/>
+         </ImageView>
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="TennesseeAvenue" visible="false" onMouseClicked="#selectTennesseeAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/tennessee_ave.png"/>
+         </ImageView>
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="NewYorkAvenue" visible="false" onMouseClicked="#selectNewYorkAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/new_york_ave.png"/>
+         </ImageView>
+      </VBox>
+      <VBox spacing="-220">
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="595.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="KentuckyAvenue" visible="false" onMouseClicked="#selectKentuckyAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/kentucky_ave.png"/>
+         </ImageView>
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="IndianaAvenue" visible="false" onMouseClicked="#selectIndianaAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/indiana_ave.png"/>
+         </ImageView>
+         <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="215.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="IllinoisAvenue" visible="false" onMouseClicked="#selectIllinoisAvenue">
+            <Image url="/com/monopoly/cop3252monopoly/images/illinois_ave.png"/>
+         </ImageView>
+      </VBox>
+   </HBox>
+   <HBox prefHeight="450.0" prefWidth="600.0">
+      <children>
+         <VBox spacing="-220">
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="AtlanticAvenue" visible="false" onMouseClicked="#selectAtlanticAvenue">
+               <Image url="/com/monopoly/cop3252monopoly/images/atlantic_ave.png"/>
+            </ImageView>
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="VentnorAvenue" visible="false" onMouseClicked="#selectVentnorAvenue">
+               <Image url="/com/monopoly/cop3252monopoly/images/ventnor_ave.png"/>
+            </ImageView>
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="MarvinGardens" visible="false" onMouseClicked="#selectMarvinGardens">
+               <Image url="/com/monopoly/cop3252monopoly/images/marvin_gardens.png"/>
+            </ImageView>
+         </VBox>
+         <VBox spacing="-220">
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="200.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="PacificAvenue" visible="false" onMouseClicked="#selectPacificAvenue">
+               <Image url="/com/monopoly/cop3252monopoly/images/pacific_ave.png"/>
+            </ImageView>
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="200.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="NorthCarolinaAvenue" visible="false" onMouseClicked="#selectNorthCarolinaAvenue">
+               <Image url="/com/monopoly/cop3252monopoly/images/north_carolina_ave.png"/>
+            </ImageView>
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="200.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="PennsylvaniaAvenue" visible="false" onMouseClicked="#selectPennsylvaniaAvenue">
+               <Image url="/com/monopoly/cop3252monopoly/images/pennsylvania_ave.png"/>
+            </ImageView>
+         </VBox>
+         <VBox spacing="-220">
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="390.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="ParkPlace" visible="false" onMouseClicked="#selectParkPlace">
+               <Image url="/com/monopoly/cop3252monopoly/images/park_place.png"/>
+            </ImageView>
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="390.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="Boardwalk" visible="false" onMouseClicked="#selectBoardwalk">
+               <Image url="/com/monopoly/cop3252monopoly/images/boardwalk.png"/>
+            </ImageView>
+         </VBox>
+         <VBox spacing="-240">
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="580.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="ReadingRailroad" visible="false">
+               <Image url="/com/monopoly/cop3252monopoly/images/reading_railroad.png"/>
+            </ImageView>
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="580.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="PennsylvaniaRailroad" visible="false">
+               <Image url="/com/monopoly/cop3252monopoly/images/pennsylvania_railroad.png"/>
+            </ImageView>
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="580.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="BORailroad" visible="false">
+               <Image url="/com/monopoly/cop3252monopoly/images/bo_railroad.png"/>
+            </ImageView>
+            <ImageView fitHeight="400.0" fitWidth="250.0" layoutX="580.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" fx:id="ShortLineRR" visible="false">
+               <Image url="/com/monopoly/cop3252monopoly/images/short_line.png"/>
+            </ImageView>
+         </VBox>
+         <VBox spacing="-180">
+            <ImageView fitHeight="400.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" fx:id="ElectricCompany" visible="false">
+               <Image url="/com/monopoly/cop3252monopoly/images/electric_company.png"/>
+            </ImageView>
+            <ImageView fitHeight="400.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" fx:id="WaterWorks" visible="false" onMouseClicked="#selectWaterWorks">
+               <Image url="/com/monopoly/cop3252monopoly/images/water_works.png"/>
+            </ImageView>
+         </VBox>
+      </children>
+   </HBox>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+      <Label text="Property Selected: " fx:id="propertySelectedLabel"/>
+      <Button mnemonicParsing="false" text="Buy House" onAction="#buyHouse"/>
+      <Button mnemonicParsing="false" text="Exit" />
+   </HBox>
+</VBox>

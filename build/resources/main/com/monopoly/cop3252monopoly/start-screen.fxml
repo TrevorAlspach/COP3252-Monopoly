@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="30.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monopoly.cop3252monopoly.StartWindowController">
+   <children>
+      <Label fx:id="title" alignment="BOTTOM_CENTER" prefHeight="111.0" prefWidth="606.0" text="Monopoly" />
+      <Button fx:id="button2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onButton2Click" prefHeight="31.0" prefWidth="130.0" textAlignment="CENTER" />
+      <Button fx:id="button3" alignment="CENTER" mnemonicParsing="false" onAction="#onButton3Click" prefHeight="32.0" prefWidth="132.0"  textAlignment="CENTER" />
+      <Button fx:id="button4" alignment="CENTER" mnemonicParsing="false" onAction="#onButton4Click" prefHeight="32.0" prefWidth="131.0" textAlignment="CENTER" />
+   </children>
+</VBox>
