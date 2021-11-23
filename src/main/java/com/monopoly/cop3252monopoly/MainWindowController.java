@@ -1279,7 +1279,7 @@ public class MainWindowController implements Initializable {
             player.setCurrentPosition(40);
             player.setInJail(true);
         }
-        else if (id == 12) { } // Make general repairs on all your property. For each house pay $25. For each hotel pay $100
+        else if (id == 12) { player.addGetOutOfJailCard(); } // Make general repairs on all your property. For each house pay $25. For each hotel pay $100
         else if (id == 13) { player.loseMoney(15); } // Speeding fine $15
         else if (id == 14) { // Take a trip to Reading Railroad. If you pass Go, collect $200
             player.addMoney(200); // player always passes go
@@ -1330,7 +1330,7 @@ public class MainWindowController implements Initializable {
         else if (id == 11) { player.loseMoney(100); } // Pay hospital fees of $100
         else if (id == 12) { player.loseMoney(50); } // Pay school fees of $50
         else if (id == 13) { player.loseMoney(25); } // Receive $25 consultancy fee
-        else if (id == 14) {  } // You are assessed for street repair. $40 per house. $115 per hotel
+        else if (id == 14) { player.addGetOutOfJailCard(); } // You are assessed for street repair. $40 per house. $115 per hotel
         else if (id == 15) { player.addMoney(10); } // You have won second prize in a beauty contest. Collect $10
         else if (id == 16) { player.addMoney(100); } // You inherit $100
 

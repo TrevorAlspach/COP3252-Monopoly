@@ -38,7 +38,7 @@ public class ChanceCardsDeck {
             else if (x == 9) { chanceCard.setTitle("Get Out of Jail Free");}
             else if (x == 10) { chanceCard.setTitle("Go Back 3 Spaces");}
             else if (x == 11) { chanceCard.setTitle("Go to Jail. Go directly to Jail, do not pass Go, do not collect $200");}
-            else if (x == 12) { chanceCard.setTitle("Make general repairs on all your property. For each house pay $25. For each hotel pay $100");}
+            else if (x == 12) { chanceCard.setTitle("Get Out of Jail Free");} // Make general repairs on all your property. For each house pay $25. For each hotel pay $100
             else if (x == 13) { chanceCard.setTitle("Speeding fine $15");}
             else if (x == 14) { chanceCard.setTitle("Take a trip to Reading Railroad. If you pass Go, collect $200");}
             else if (x == 15) { chanceCard.setTitle("You have been elected Chairman of the Board. Pay each player $50");}
