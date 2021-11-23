@@ -144,6 +144,7 @@ public class MainWindowController implements Initializable {
     public ChanceCardsDeck chanceCardsDeck;
     public CommunityCardsDeck communityCardsDeck;
 
+    public HashMap<Integer, Integer> map = new HashMap<>(){{put(1,5);}};
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         chance.setX(515);
@@ -721,7 +722,8 @@ public class MainWindowController implements Initializable {
             Parent parent = fxmlLoader.load();
             ViewPropertiesController controller = fxmlLoader.getController();
             controller.setPlayer(currentPlayer);
-            Scene scene = new Scene(parent, 1340, 940);
+            controller.setHashMap(properties);
+            Scene scene = new Scene(parent, 1400, 920);
             Stage stage = new Stage();
             stage.setTitle("Monopoly");
             stage.setScene(scene);
