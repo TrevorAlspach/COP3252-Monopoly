@@ -1369,7 +1369,7 @@ public class MainWindowController implements Initializable {
             if (entry.getValue().getOwner() == player.getPlayerID()) {
                 entry.getValue().setOwned(false);
                 entry.getValue().setOwner(0);
-                // todo: set numHouses and numHotels back to 0 for each property
+                entry.getValue().setHouseCount(0);
             }
         }
 
