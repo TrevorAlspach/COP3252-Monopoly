@@ -30,7 +30,9 @@ public class Dice {
         DEBUGdice2 = dice2[y];
         lastRoll = sum;
         player.movePlayer(sum);
-        doublesCount++;
+        if(x == y) {
+            doublesCount++;
+        }
 
         return x == y;
     }
