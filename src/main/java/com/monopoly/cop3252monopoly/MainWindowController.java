@@ -961,6 +961,7 @@ public class MainWindowController implements Initializable {
             infoMessage(String.format("Player %d has been sent to Jail!", currentPlayer.getPlayerID()));
             currentPlayer.setCurrentPosition(40);
             currentPlayer.setInJail(true);
+            dice.setDoublesCount(0);
             updatePlayerLocation(currentPlayer);
         } else if (currentPlayer.getCurrentPosition() == 38) { // Luxury Tax
             currentPlayer.loseMoney(75);
@@ -1280,6 +1281,7 @@ public class MainWindowController implements Initializable {
         else if (id == 10) { player.movePlayer(-3); performSpaceLogic(dice.getLastRoll()); } // Go Back 3 Spaces
         else if (id == 11) { // Go to Jail. Go directly to Jail, do not pass Go, do not collect $200
             player.setCurrentPosition(40);
+            dice.setDoublesCount(0);
             player.setInJail(true);
         }
         else if (id == 12) { player.addGetOutOfJailCard(); } // Make general repairs on all your property. For each house pay $25. For each hotel pay $100
@@ -1316,6 +1318,7 @@ public class MainWindowController implements Initializable {
         else if (id == 5) { player.addGetOutOfJailCard(); } // Get Out of Jail Free
         else if (id == 6) { // Go to Jail. Go directly to jail, do not pass Go, do not collect $200
             player.setCurrentPosition(40);
+            dice.setDoublesCount(0);
             player.setInJail(true);
         }
         else if (id == 7) { player.addMoney(100); } // Holiday fund matures. Receive $100
