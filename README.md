@@ -34,21 +34,26 @@
   - Player 4 is represented by the dog icon.
 <img src="https://user-images.githubusercontent.com/54950007/144681437-9c0abfa2-5186-4962-b39f-7723dcbfeee5.png" width="30%" height="30%"/>
 
+- Players are presented with 3 actions in the sidebar on the left side of the window: Roll Dice, View Properties, and Next Turn.
+
+<img src="https://user-images.githubusercontent.com/54950007/144680273-695e5ad5-0b2f-46ee-96cd-ee3e58a156dc.png"/>
+
 - Starting with Player 1, roll 2 dice to move spaces by using the “Roll Dice” button. The sum of the dice roll will be how many spaces a player moves, an action that is performed automatically.
   - If you roll doubles, you can roll again.
   - If you roll doubles 3 times, you go to jail.
   - When a player has used up all of their available dice rolls for their turn, the "Roll Dice" button no longer works.
 - If you land on an unowned space, you will be prompted with the question to buy the property.
-  - Select “yes” means you pay the price (displayed on the board) and own the property.
-    - You can view your properties in a separate tab with the “View Properties” button.
-      - You can buy houses and hotels in this tab once you own a monopoly of properties.
+  - Select “yes” in the Buy Options menu in the bottom left corner of the window means you pay the price displayed on the board and own the property. You can view how much money and how many properties you and the other players have in the sidebar on the right side of the window.
+    - You can view your own properties in a separate window with the “View Properties” button.
+      - You can buy houses and hotels in this window once you own a monopoly of properties.
+
+<img src="https://user-images.githubusercontent.com/54950007/144682201-da935a70-4f68-444a-9144-3c481e9d7625.png" width="70%" height="70%"/>
+
 - If you land on an owned space, you automatically pay rent to the owner.
 - If you are in jail when your turn begins, you will automatically pay the $50 bail.
 - If you land on a chance or community chest space, the effects of the card (moving spacing, losing/gaining money) will automatically take place.
 - If you are done with your turn, click the “Next Turn” button.
 - A listView at the bottom of the main window shows each action taking place, including moving positions, drawing cards, paying rent, and buying properties, etc.
-
-<img src="https://user-images.githubusercontent.com/54950007/144680273-695e5ad5-0b2f-46ee-96cd-ee3e58a156dc.png" width="100%" height="100%"/>
 
 ### Implementation
 
