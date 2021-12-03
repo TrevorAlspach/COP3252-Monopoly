@@ -22,7 +22,12 @@
 
 - In the start window, choose the number of players (2-4) by clicking on the corresponding button.
 ![Start Window](https://myoctocat.com/assets/images/base-octocat.svg)
-- Roll 2 dice to move spaces by using the “Roll Dice” button. The sum of the dice roll will be how many spaces a player moves, which will be performed automatically
+- The main window opens up with the requested number of players.
+  - Player 1 is represented by the car icon.
+  - Player 2 is represented by the hat icon.
+  - Player 3 is represented by the ship icon.
+  - Player 4 is represented by the dog icon.
+- Starting with Player 1, roll 2 dice to move spaces by using the “Roll Dice” button. The sum of the dice roll will be how many spaces a player moves, which will be performed automatically
   - If you roll doubles, you can roll again.
   - If you roll doubles 3 times, you go to jail.
   - When a player has used up all of their available dice rolls for their turn, the "Roll Dice" button no longer works.
@@ -34,6 +39,7 @@
 - If you are in jail when your turn begins, you will automatically pay the $50 bail.
 - If you land on a chance or community chest space, the effects of the card (moving spacing, losing/gaining money) will automatically take place.
 - If you are done with your turn, click the “Next Turn” button.
+- A listView at the bottom of the main window 
 
 ### Implementation
 
