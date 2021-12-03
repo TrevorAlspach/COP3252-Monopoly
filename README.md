@@ -22,17 +22,17 @@
 
 - In the start window, choose the number of players (2-4) by clicking on the corresponding button.
 
-![Start Window](https://user-images.githubusercontent.com/54950007/144667836-8a8e2941-d794-4c9b-bf54-434e70414cc6.png)
+<img src="https://user-images.githubusercontent.com/54950007/144667836-8a8e2941-d794-4c9b-bf54-434e70414cc6.png" width="50%" height="50%"/>
 
 - The main window opens up with the requested number of players.
   - Player 1 is represented by the car icon.
-  - ![Car](/com/monopoly/cop3252monopoly/images/monopoly_car.png)
+  - <img src="src/main/resources/com/monopoly/cop3252monopoly/images/monopoly_car.png" width="50%" height="50%"/>
   - Player 2 is represented by the hat icon.
-  - ![Hat](/com/monopoly/cop3252monopoly/images/monopoly_hat.png)
+  - <img src="src/main/resources/com/monopoly/cop3252monopoly/images/monopoly_hat.png" width="30%" height="30%"/>
   - Player 3 is represented by the ship icon.
-  - ![Ship](/com/monopoly/cop3252monopoly/images/monopoly_ship.png)
+  - <img src="src/main/resources/com/monopoly/cop3252monopoly/images/monopoly_ship.png" width="50%" height="50%"/>
   - Player 4 is represented by the dog icon.
-  - ![Dog](src/main/resources/com/monopoly/cop3252monopoly/images/monopoly_dog.png)
+  - <img src="src/main/resources/com/monopoly/cop3252monopoly/images/monopoly_dog.png" width="25%" height="25%"/>
 
 ![Main Window Default](https://user-images.githubusercontent.com/54950007/144668130-d2bdef08-047e-4878-9ec4-401cd2e612be.png)
 
