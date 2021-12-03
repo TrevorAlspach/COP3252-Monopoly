@@ -52,16 +52,13 @@
 - If you land on an owned space, you automatically pay rent to the owner.
 - If you are in jail when your turn begins, you will automatically pay the $50 bail.
 - If you land on a chance or community chest space, the effects of the card (moving spacing, losing/gaining money) will automatically take place.
-- If you are done with your turn, click the “Next Turn” button.
+- If you are done with your turn, click the “Next Turn” button. 
+  - This button cannot be clicked until the current player has used up all of their dice rolls. That way, no player's turn is skipped.  
 - A listView at the bottom of the main window shows each action taking place, including moving positions, drawing cards, paying rent, and buying properties, etc.
 
 ### Implementation
 
 - Any other important details about your implementation, how to run the program, etc
-
-### Extra Features
-
-- Descriptions of any extra features implemented
 
 ### Credits
 
