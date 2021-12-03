@@ -20,6 +20,12 @@ standard known instructions
 
 ### Credits
 
+#### Trevor Alspach
+
+#### Kaitlin Tran
+
+#### Benjamin Zech
+
 ○ A description of the separation of work between partners (who was responsible for what
 pieces of the program)
 
