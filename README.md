@@ -53,7 +53,7 @@
 - If you are in jail when your turn begins, you will automatically pay the $50 bail.
 - If you land on a chance or community chest space, the effects of the card (moving spacing, losing/gaining money) will automatically take place.
 - If you are done with your turn, click the “Next Turn” button. 
-  - This button cannot be clicked until the current player has used up all of their dice rolls. That way, no player's turn is skipped.
+  - This button does not work until the current player has used up all of their dice rolls. That way, no player's turn is skipped.
 - Any player that loses all of their money will be automatically kicked out of the game, and all of their properties will reset to being unowned.
   - The ejected player's turn will be skipped when the "Next Turn" button is clicked for the remainder of the game.  
 - A listView at the bottom of the main window shows each action taking place, including moving positions, drawing cards, paying rent, and buying properties, etc.
