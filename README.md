@@ -34,8 +34,6 @@
   - Player 4 is represented by the dog icon.
 <img src="src/main/resources/com/monopoly/cop3252monopoly/images/monopoly_dog.png" width="25%" height="25%"/>
 
-![Main Window Default](https://user-images.githubusercontent.com/54950007/144668130-d2bdef08-047e-4878-9ec4-401cd2e612be.png)
-
 - Starting with Player 1, roll 2 dice to move spaces by using the “Roll Dice” button. The sum of the dice roll will be how many spaces a player moves, which will be performed automatically
   - If you roll doubles, you can roll again.
   - If you roll doubles 3 times, you go to jail.
@@ -49,6 +47,8 @@
 - If you land on a chance or community chest space, the effects of the card (moving spacing, losing/gaining money) will automatically take place.
 - If you are done with your turn, click the “Next Turn” button.
 - A listView at the bottom of the main window 
+
+<img src="https://user-images.githubusercontent.com/54950007/144680273-695e5ad5-0b2f-46ee-96cd-ee3e58a156dc.png" width="50%" height="50%"/>
 
 ### Implementation
 
@@ -70,7 +70,7 @@ pieces of the program)
 - Created Dice.java model
 - Uploaded images of Monopoly board, community chest cards, chance cards, and dice sides for use in GUI
 - Implemented graphics when "Roll Dice" button is clicked so that images of correct dice side appear on the board when dice are virtually "rolled".
-- Placed house and hotel graphics onto designated board positions to appear when a player buys houses on certain properties
+- Placed house and hotel graphics onto designated board positions to appear when a player buys houses or hotels
 - Created property card graphics for display in properties window
 - Documented project details in README.md file
 
