@@ -22,7 +22,13 @@ standard known instructions
 
 #### Trevor Alspach
 
+○ A description of the separation of work between partners (who was responsible for what
+pieces of the program)
+
 #### Kaitlin Tran
+
+○ A description of the separation of work between partners (who was responsible for what
+pieces of the program)
 
 #### Benjamin Zech
 
