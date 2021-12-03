@@ -21,7 +21,7 @@
 ### Interface
 
 - In the start window, choose the number of players (2-4) by clicking on the corresponding button.
-![Start Window](https://myoctocat.com/assets/images/base-octocat.svg)
+![image](https://user-images.githubusercontent.com/54950007/144667714-c13fe352-934d-4869-b9a6-b33fc487afa5.png)
 - The main window opens up with the requested number of players.
   - Player 1 is represented by the car icon.
   - Player 2 is represented by the hat icon.
