@@ -25,13 +25,13 @@
 <img src="https://user-images.githubusercontent.com/54950007/144667836-8a8e2941-d794-4c9b-bf54-434e70414cc6.png" width="50%" height="50%"/>
 
 - The main window opens up with the requested number of players.
-  - Player 1 is represented by the car icon.
+- Player 1 is represented by the car icon.
 <img src="src/main/resources/com/monopoly/cop3252monopoly/images/monopoly_car.png" width="30%" height="30%"/>
-  - Player 2 is represented by the hat icon.
+- Player 2 is represented by the hat icon.
 <img src="https://user-images.githubusercontent.com/54950007/144681584-4f9cc62b-c57a-4d1f-9e9b-bf00855e5cc1.png" width="30%" height="30%"/>
-  - Player 3 is represented by the ship icon.
+- Player 3 is represented by the ship icon.
 <img src="src/main/resources/com/monopoly/cop3252monopoly/images/monopoly_ship.png" width="30%" height="30%"/>
-  - Player 4 is represented by the dog icon.
+- Player 4 is represented by the dog icon.
 <img src="https://user-images.githubusercontent.com/54950007/144681437-9c0abfa2-5186-4962-b39f-7723dcbfeee5.png" width="30%" height="30%"/>
 
 - Players are presented with 3 actions in the sidebar on the left side of the window: Roll Dice, View Properties, and Next Turn.
