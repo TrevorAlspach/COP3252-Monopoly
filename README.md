@@ -52,17 +52,17 @@
 
 ### Implementation
 
-○ Any other important details about your implementation, how to run the program, etc
+- Any other important details about your implementation, how to run the program, etc
 
 ### Extra Features
 
-○ Descriptions of any extra features implemented
+- Descriptions of any extra features implemented
 
 ### Credits
 
 #### Trevor Alspach
 
-○ A description of the separation of work between partners (who was responsible for what
+- A description of the separation of work between partners (who was responsible for what
 pieces of the program)
 
 #### Kaitlin Tran
