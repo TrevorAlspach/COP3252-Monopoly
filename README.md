@@ -21,6 +21,7 @@
 ### Interface
 
 - In the start window, choose the number of players (2-4) by clicking on the corresponding button.
+![Start Window](https://myoctocat.com/assets/images/base-octocat.svg)
 - Roll 2 dice to move spaces by using the “Roll Dice” button.
   - If you roll doubles, you can roll again.
   - If you roll doubles 3 times, you go to jail.
