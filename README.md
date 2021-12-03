@@ -21,13 +21,17 @@
 ### Interface
 
 - In the start window, choose the number of players (2-4) by clicking on the corresponding button.
+
 ![Start Window](https://user-images.githubusercontent.com/54950007/144667836-8a8e2941-d794-4c9b-bf54-434e70414cc6.png)
+
 - The main window opens up with the requested number of players.
   - Player 1 is represented by the car icon.
   - Player 2 is represented by the hat icon.
   - Player 3 is represented by the ship icon.
   - Player 4 is represented by the dog icon.
-![Main Window Default](https://user-images.githubusercontent.com/54950007/144668001-fc056418-7bc0-4cf0-a12f-dfc68d736170.png)
+
+![Main Window Default](https://user-images.githubusercontent.com/54950007/144668130-d2bdef08-047e-4878-9ec4-401cd2e612be.png)
+
 - Starting with Player 1, roll 2 dice to move spaces by using the “Roll Dice” button. The sum of the dice roll will be how many spaces a player moves, which will be performed automatically
   - If you roll doubles, you can roll again.
   - If you roll doubles 3 times, you go to jail.
