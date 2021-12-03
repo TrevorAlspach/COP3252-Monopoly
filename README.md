@@ -21,8 +21,7 @@
 ### Interface
 
 - In the start window, choose the number of players (2-4) by clicking on the corresponding button.
-![image](https://user-images.githubusercontent.com/54950007/144667714-c13fe352-934d-4869-b9a6-b33fc487afa5.png)
-- The main window opens up with the requested number of players.
+![Start Window](https://user-images.githubusercontent.com/54950007/144667836-8a8e2941-d794-4c9b-bf54-434e70414cc6.png)- The main window opens up with the requested number of players.
   - Player 1 is represented by the car icon.
   - Player 2 is represented by the hat icon.
   - Player 3 is represented by the ship icon.
