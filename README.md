@@ -18,3 +18,5 @@ pieces of the program)
 [Board Reference Image](SampleMonopolyBoard.jpg)
 
 [Chance and Community Chest Cards References](https://www.monopolyland.com/list-monopoly-chance-community-chest-cards/)
+
+[Monopoly Template for Photoshop](https://bradfrost.com/blog/post/monopoly-photoshop-template/)
