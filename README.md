@@ -26,9 +26,13 @@
 
 - The main window opens up with the requested number of players.
   - Player 1 is represented by the car icon.
+  - ![Car](/com/monopoly/cop3252monopoly/images/monopoly_car.png)
   - Player 2 is represented by the hat icon.
+  - ![Hat](/com/monopoly/cop3252monopoly/images/monopoly_hat.png)
   - Player 3 is represented by the ship icon.
+  - ![Ship](/com/monopoly/cop3252monopoly/images/monopoly_ship.png)
   - Player 4 is represented by the dog icon.
+  - ![Dog](/com/monopoly/cop3252monopoly/images/monopoly_dog.png)
 
 ![Main Window Default](https://user-images.githubusercontent.com/54950007/144668130-d2bdef08-047e-4878-9ec4-401cd2e612be.png)
 
