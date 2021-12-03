@@ -22,18 +22,18 @@
 
 - In the start window, choose the number of players (2-4) by clicking on the corresponding button.
 ![Start Window](https://myoctocat.com/assets/images/base-octocat.svg)
-- Roll 2 dice to move spaces by using the “Roll Dice” button.
+- Roll 2 dice to move spaces by using the “Roll Dice” button. The sum of the dice roll will be how many spaces a player moves, which will be performed automatically
   - If you roll doubles, you can roll again.
   - If you roll doubles 3 times, you go to jail.
+  - When a player has used up all of their available dice rolls for their turn, the "Roll Dice" button no longer works.
 - If you land on an unowned space, you will be prompted with the question to buy the property.
-  - Select “yes” means you pay the price and own the property.
+  - Select “yes” means you pay the price (displayed on the board) and own the property.
     - You can view your properties in a separate tab with the “View Properties” button.
       - You can buy houses and hotels in this tab once you own a monopoly of properties.
 - If you land on an owned space, you automatically pay rent to the owner.
 - If you are in jail when your turn begins, you will automatically pay the $50 bail.
 - If you land on a chance or community chest space, the effects of the card (moving spacing, losing/gaining money) will automatically take place.
 - If you are done with your turn, click the “Next Turn” button.
-
 
 ### Implementation
 
@@ -52,8 +52,12 @@ pieces of the program)
 
 #### Kaitlin Tran
 
-○ A description of the separation of work between partners (who was responsible for what
-pieces of the program)
+- Created Dice.java model
+- Uploaded images of Monopoly board, community chest cards, chance cards, and dice sides for use in GUI
+- Implemented graphics when "Roll Dice" button is clicked so that images of correct dice side appear on the board when dice are virtually "rolled".
+- Placed house and hotel graphics onto designated board positions to appear when a player buys houses on certain properties
+- Created property card graphics for display in properties window
+- Documented project details in README.md file
 
 #### Benjamin Zech
 
