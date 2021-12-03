@@ -18,10 +18,21 @@
   - Players that own monopolies can build houses and hotels on properties to increase rent.
 - If you run out of money, you’re out. Winner is the last player standing
 
-
 ### Interface
 
-○ A description of how to use the interface
+- In the start window, choose the number of players (2-4) by clicking on the corresponding button.
+- Roll 2 dice to move spaces by using the “Roll Dice” button.
+  - If you roll doubles, you can roll again.
+  - If you roll doubles 3 times, you go to jail.
+- If you land on an unowned space, you will be prompted with the question to buy the property.
+  - Select “yes” means you pay the price and own the property.
+    - You can view your properties in a separate tab with the “View Properties” button.
+      - You can buy houses and hotels in this tab once you own a monopoly of properties.
+- If you land on an owned space, you automatically pay rent to the owner.
+- If you are in jail when your turn begins, you will automatically pay the $50 bail.
+- If you land on a chance or community chest space, the effects of the card (moving spacing, losing/gaining money) will automatically take place.
+- If you are done with your turn, click the “Next Turn” button.
+
 
 ### Implementation
 
