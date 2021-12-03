@@ -3,20 +3,20 @@
 
 ### Game instructions
 
-○ Requires 2-4 players
-○ Each player starts off with $1500
-○ Players begin at the “Go” space and move clockwise around the board (contains 40 spaces)
-○ Wild cards
-○ If a player lands on a chance or community chest space, they must draw a chance/community card from the deck and follow directions.
-○ Jail
-○ Players in jail cannot play until they pay $50 bail.
-○ Owning property
-○ If a player lands on an unowned property, they have the choice to buy it using money.
-○ If a player lands on an owned property, they owe the owner of the property rent money.
-○ Monopoly
-○ If a player owns every property of a single color, they have a monopoly. Rent is doubled.
-○ Players that own monopolies can build houses and hotels on properties to increase rent.
-○ If you run out of money, you’re out. Winner is the last player standing
+- Requires 2-4 players
+- Each player starts off with $1500
+- Players begin at the “Go” space and move clockwise around the board (contains 40 spaces)
+- Wild cards
+- If a player lands on a chance or community chest space, they must draw a chance/community card from the deck and follow directions.
+- Jail
+- Players in jail cannot play until they pay $50 bail.
+- Owning property
+- If a player lands on an unowned property, they have the choice to buy it using money.
+- If a player lands on an owned property, they owe the owner of the property rent money.
+- Monopoly
+- If a player owns every property of a single color, they have a monopoly. Rent is doubled.
+- Players that own monopolies can build houses and hotels on properties to increase rent.
+- If you run out of money, you’re out. Winner is the last player standing
 
 
 ### Interface
