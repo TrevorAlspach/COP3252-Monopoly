@@ -84,7 +84,6 @@ pieces of the program)
   - CommunityCardsDeck.java
 - Wrote logic for landing on board spaces that are ***not*** properties (chance cards, go to jail, taxes, etc.)
 - Wrote methods for the logic of all 16 Chance cards and 16 Community Chest cards
-- Wrote logic for updating player location and balance
 - Wrote logic for kicking a player out of the game
 
 [Monopoly Board Reference](https://www.amazon.com/Hasbro-00009-482-Monopoly-Board/dp/B00CV5PN2W)
