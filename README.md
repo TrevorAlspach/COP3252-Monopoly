@@ -61,7 +61,7 @@
 ### Implementation
 
 - Clone this github repository and run the application. All three of us used IntelliJ for this project. If the application window is too large to fit on your screen, the computer monitor's configuration can be changed in your computer's settings to fit the entire window.
-- The powerpoint for the group presentation is available in the repository as COP3252MonopolyPresentation.pdf.
+- The powerpoint for the group presentation is available in the repository as COP3252 Monopoly Presentation.pdf.
 
 ### Credits
 
