@@ -64,6 +64,9 @@
 - In order to run, clone this github repository and run the application. All three of us used IntelliJ for this project. If the application window is too large to fit on your screen, the computer monitor's configuration can be changed in your computer's settings to fit the entire window.
 - The powerpoint for the group presentation is available in the repository as COP3252 Monopoly Presentation.pptx.
 
+
+- If you have troubles finding the path for our code files, they can be found via this path: https://github.com/TrevorAlspach/COP3252-Monopoly/tree/master/src/main/java/com/monopoly/cop3252monopoly
+
 ### Credits
 
 #### Trevor Alspach
