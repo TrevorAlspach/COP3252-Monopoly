@@ -66,17 +66,39 @@
 
 #### Trevor Alspach
 
-- A description of the separation of work between partners (who was responsible for what
-pieces of the program)
+- Created Monopoly application
+- Implemented UI with MVC architecture
+  - Created FXML files for display windows
+    - main-window.fxml
+    - start-screen.fxml
+    - view-properties.fxml
+  - Created window controllers
+     - MainWindowController.java 
+     - StartWindowController.java
+     - ViewPropertiesController.java
+- Created Property.java model
+- Wrote methods to:
+  - Open Start window with player options
+  - Initialize board, game pieces, properties, chance/community card decks, number of players
+  - Perform logic when players land on property board spaces
+  - Update game details when players buy property or choose not to buy property
+  - Connect property names to space numbers
+  - Update player positions, money balance, and properties owned in the GUI
+  - Display information on game activity in listView
+  - Open View Properties window
+    - Display properties as cards in View Properties window if they are owned by current player
+    - Update game details and display when a player buys a house
+- Translated project into runnable jar file
 
 #### Kaitlin Tran
 
 - Created Dice.java model
 - Uploaded images of Monopoly board, community chest cards, chance cards, and dice sides for use in GUI
+- Placed game piece graphics onto designated board positions to appear when a player moves across the board
 - Implemented graphics when "Roll Dice" button is clicked so that images of correct dice side appear on the board when dice are virtually "rolled".
 - Placed house and hotel graphics onto designated board positions to appear when a player buys houses or hotels
-- Created property card graphics for display in properties window
-- Documented and formatted project details in README.md file
+- Created property card graphics for display in View Properties window
+- Documented and formatted details on gameplay and interface in README.md file
 
 #### Benjamin Zech
 
